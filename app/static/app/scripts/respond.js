@@ -338,3 +338,29 @@ window.matchMedia = window.matchMedia || (function(doc, undefined){
 		win.attachEvent( "onresize", callMedia );
 	}
 })(this);
+
+
+// var input = document.getElementById("Log_in");
+// input.addEventListener("keyup", function(event) {
+//     if (event.keyCode === 13) {
+//         event.preventDefault();
+//         document.getElementById("Log_in").click();
+//     }
+// });
+
+function login_submit() {
+  var xhttp = new XMLHttpRequest();
+//   alert(username);
+//   alert(password);
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    //   document.getElementById("demo").innerHTML =
+	//   this.responseText;
+		// alert(username);
+    }
+  };
+  	xhttp.open("GET", "/login_submit/", true);
+	xhttp.send();  
+  
+}
+

@@ -12,20 +12,20 @@
                 <hr />
                 <div class="form-group">
                     <label for="id_username" class="col-md-2 control-label">User name</label>
-                    <div class="col-md-10">
+                    <div class="col-md-10" id="username">
                         {{ form.username }}
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="id_password" class="col-md-2 control-label">Password</label>
-                    <div class="col-md-10">
+                    <div class="col-md-10" id="password">
                         {{ form.password }}
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="hidden" name="next" value="/" />
-                        <input type="submit" value="Log in" class="btn btn-default" />
+                        <input type="submit" id = "Log_in" value="Log in" class="btn btn-default"/>
                     </div>
                 </div>
                 {% if form.errors %}
@@ -44,7 +44,8 @@
 
 {% block scripts %}
 
-    {% load staticfiles %}
+    {% load static %}
 <script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+<script src="{% static 'app/scripts/respond.js' %}"></script>
 
 {% endblock %}
