@@ -1,0 +1,18 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<graph>
+    Raspberry Pi Graphs - Data from Cosmos DB<br />    
+    <!-- <abbr title="Cosmos">Graph Details:</abbr> -->    
+</graph>
+
+<graph>
+    <img src="data:image/png;base64,{{ data1 }}" alt="" height="500", width="500">
+    <img src="data:image/png;base64,{{ data2 }}" alt="" height="500", width="500">
+</graph>
+
+{% endblock %}

@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^home_ML$', app.views.home_ML, name='home_ML'),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
+    url('^weather/$', app.views.graphs, name="weather_graph"),
     # url(r'^login/$',
     #     app.views.login,
     #     {

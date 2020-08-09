@@ -1,0 +1,8 @@
+---
+applications:
+- name: python_webapp_django
+  memory: 512M
+  instances: 1
+  disk_quota: 768M
+  health-check-type: http
+  health-check-http-endpoint: /health

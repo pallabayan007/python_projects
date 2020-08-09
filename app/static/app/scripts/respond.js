@@ -348,19 +348,28 @@ window.matchMedia = window.matchMedia || (function(doc, undefined){
 //     }
 // });
 
-function login_submit() {
-  var xhttp = new XMLHttpRequest();
-//   alert(username);
-//   alert(password);
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-    //   document.getElementById("demo").innerHTML =
-	//   this.responseText;
-		// alert(username);
-    }
-  };
-  	xhttp.open("GET", "/login_submit/", true);
-	xhttp.send();  
+function weathergraph() {
+//   var xhttp = new XMLHttpRequest();
+// //   alert(username);
+// //   alert("hi");
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//     //   document.getElementById("demo").innerHTML =
+// 	//   this.responseText;
+// 		// alert(username);
+//     }
+//   };
+//   	xhttp.open("GET", "http://127.0.0.1:8000/weather/", true);
+// 	xhttp.send(); 
+	
+	// $('#weathergraph').on('submit',function(e){
+	// 	e.preventDefault();
+	// 	$.get('/weather/',
+	// 		  function(response){ $('#response_msg').text(response.msg);}
+	// 	);
+	// });
+	 
   
 }
+
 

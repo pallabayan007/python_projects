@@ -38,6 +38,8 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+import urllib, base64
+from app.cosmosdbconn import *
 #--------------------------------------------------------------
 #Custom imports
 #--------------------------------------------------------------
@@ -97,6 +99,24 @@ def about(request):
             'message':'Your application description page.',
             'year':datetime.now().year,
         }
+    )
+
+def graphs(request):
+    """Renders the Cosmos DB Graph page."""
+    assert isinstance(request, HttpRequest)
+    print('Inside Graphs')
+    # return render(request, 'cosmosgraph.html', {'data1':uri1, 'data2':uri2})
+    uri_temp = cosmosgraphs_temp()
+    uri_humid = cosmosgraphs_humid()
+    return render(request, 
+            'app/cosmosgraph.html',
+             {
+                 'data1':uri_temp, 
+                 'data2':uri_humid,
+                 'title':'Cosmos Graphs',
+                 'message':'Your Cosmos Graph Details page.',
+                 'year':datetime.now().year,
+            }
     )
 
 # def login(request):
