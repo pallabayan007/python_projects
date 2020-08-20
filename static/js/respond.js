@@ -373,10 +373,125 @@ function weathergraph() {
 $(document).ready(function () {  
 	$("#runtraining").click(function () {  
 		console.log("++++++++++++inside run training:");
+		displayprogressbar();		
 		$.post('/api/training', function (data) {  
 			console.log("++++++++++++training response:" + data);
+			console.log("++++++++++++typeof:" + typeof data);
+			console.log("++++++++++++typeof:" + typeof "true");
+			console.log("++++++++++++typeof:" + (data == "True"));
+			hideprogressbar();
+			if(data == "True"){
+				document.getElementById("ico_completed").hidden=false;
+			} 
+			else{
+				document.getElementById("ico_failed").hidden=false;
+			}
 		});  
 	});  
 });  
 
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 50);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+
+function displayprogressbar() {
+	console.log("============Inside displayprogressbar========")
+	var x = document.getElementById("myProgress");
+	x.hidden=false
+	move();
+	// if (x.style.display === "none") {
+	//   x.style.display = "block";
+	// } else {
+	//   x.style.display = "none";
+	// }
+  }
+  function hideprogressbar() {
+	console.log("============Inside hideprogressbar========")
+	var x = document.getElementById("myProgress");
+	x.hidden=true
+  }
+  
+//For selecting files to upload
+  function selectuploadfile(){
+	var x = document.getElementById("myFile");
+	var txt = "";
+	if ('files' in x) {
+	  if (x.files.length == 0) {
+		txt = "Select one or more files.";
+	  } else {
+		for (var i = 0; i < x.files.length; i++) {
+		  txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+		  var file = x.files[i];
+		  if ('name' in file) {
+			txt += "name: " + file.name + "<br>";
+		  }
+		  if ('size' in file) {
+			txt += "size: " + file.size + " bytes <br>";
+		  }
+		}
+	  }
+	} 
+	else {
+	  if (x.value == "") {
+		txt += "Select one or more files.";
+	  } else {
+		txt += "The files property is not supported by your browser!";
+		txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+	  }
+	}
+	document.getElementById("demo").innerHTML = txt;
+  }
+
+//Uploading file on button submission
+$('#process-file-button').on('click', function (e) {
+	var fileInput = document.getElementById('myFile'); 
+	var filename = "";  
+	console.log("+++files length++++++++ " + fileInput.files.length)
+	for(var i=0; i<fileInput.files.length; i++){
+		if(filename!=""){
+			filename = filename + "," + fileInput.files[i].name;
+		}
+		else{
+			filename = fileInput.files[i].name;
+		}
+		
+	}	
+	console.log("+++files++++++++ " + filename)
+	document.getElementById("myFile").value="";
+	document.getElementById("demo").innerHTML ="";
+    let files = new FormData(), // you can consider this as 'data bag'
+		url = '/api/fileupload';
+	files.append('fileName', $('#myFile')[0].files[0]); // append selected file to the bag named 'file'
+	// console.log("+++files++++++++ " + e.target.files[0].name)
+	headers = {'filename': filename}
+    $.ajax({
+        type: 'post',
+        url: url,
+        processData: false,
+		contentType: 'application/json',
+		headers: headers,
+        data: files,
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+	});
+});
 

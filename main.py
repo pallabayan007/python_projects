@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_socketio import SocketIO, emit, send
 from chatbot.gui_chatbot import send
 from configparser import SafeConfigParser
-from admin import runtraining
+from admin import *
 import socketio, json
 
 HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
@@ -81,6 +81,15 @@ def systemtraining():
     reply = runtraining()
     # print('systemtraining: ' + str(reply))
     return reply
+
+# Uploading file from admin portal
+@app.route("/api/fileupload", methods=['GET', 'POST'])
+def systemfileupload():
+    print('====Inside systemfileupload====')
+    print('====Inside request==== ' + request.content_type)
+    reply = fileupload(request)
+    print('fileupload from main: ' + reply)
+    return str(True)
 
 if __name__ == "__main__":
     sio.run(app, app.debug==True)
