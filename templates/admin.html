@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+    {% block content %}
+
+      <div class="main-container">
+        <div class="cloud-image">
+            <img src="../../static/images/successCloudNew.svg" />
+        </div>
+        <div class="content">
+            <div class="tweet-container">
+                <a href="http://twitter.com/intent/tweet/?text=I%20just%20created%20a%20new%20Python%20Django%20website%20on%20Azure%20using%20Azure%20DevOps%20Project&hashtags=AzureDevOpsProject%2CVSTS%20%40Azure%20%40VSTS">
+                    <img src="../../static/images/tweetThis.svg" />
+                </a>            
+            </div>
+            <div class="content-body">
+                <div class="success-text">Success!</div>
+                <div class="description line-1"> Chatbot Administration</div>
+                <div class="description line-2"> This page is used for different chatbot admin activities</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">        
+        <div class="col-md-4">
+            <h2>Continuous Delivery</h2>
+            <p>View your CI/CD pipeline on Visual Studio Team Services and customize it as per your needs</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?linkid=862410">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Get your system training done right away </h2>
+          <p>
+              Start training your system by cliccking the button
+          </p>
+          <p><a class="btn btn-default" id="runtraining">Run Training &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Azure DevOps Project</h2>
+            <p>Learn more about all you can do with Azure DevOps project by visiting the documentation</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?linkid=862126">Learn more &raquo;</a></p>
+        </div>
+    </div>
+
+    {% endblock %}
+      
+
