@@ -373,13 +373,13 @@ function weathergraph() {
 $(document).ready(function () {  
 	$("#runtraining").click(function () {  
 		console.log("++++++++++++inside run training:");
-		displayprogressbar();		
+		displayprogressbar("myProgress","myBar",50);		
 		$.post('/api/training', function (data) {  
 			console.log("++++++++++++training response:" + data);
 			console.log("++++++++++++typeof:" + typeof data);
 			console.log("++++++++++++typeof:" + typeof "true");
 			console.log("++++++++++++typeof:" + (data == "True"));
-			hideprogressbar();
+			hideprogressbar("myProgress");
 			if(data == "True"){
 				document.getElementById("ico_completed").hidden=false;
 			} 
@@ -391,12 +391,15 @@ $(document).ready(function () {
 });  
 
 var i = 0;
-function move() {
+function move(barname, barwaittime) {
   if (i == 0) {
-    i = 1;
-    var elem = document.getElementById("myBar");
-    var width = 1;
-    var id = setInterval(frame, 50);
+	i = 1;
+	console.log("=============barname========:" + barname+":"+barwaittime)
+    var elem = document.getElementById(barname);
+	var width = 1;
+	console.log("=============barwaittime========:" + barwaittime)
+	var id = setInterval(frame, barwaittime);
+	console.log("=============id========:" + id)
     function frame() {
       if (width >= 100) {
         clearInterval(id);
@@ -409,26 +412,26 @@ function move() {
   }
 }
 
-function displayprogressbar() {
-	console.log("============Inside displayprogressbar========")
-	var x = document.getElementById("myProgress");
+function displayprogressbar(divname,barname,barwaittime) {
+	console.log("============Inside displayprogressbar========" + divname+":"+barname+":"+barwaittime)
+	var x = document.getElementById(divname);
 	x.hidden=false
-	move();
+	move(barname,barwaittime);
 	// if (x.style.display === "none") {
 	//   x.style.display = "block";
 	// } else {
 	//   x.style.display = "none";
 	// }
   }
-  function hideprogressbar() {
+  function hideprogressbar(divname) {
 	console.log("============Inside hideprogressbar========")
-	var x = document.getElementById("myProgress");
+	var x = document.getElementById(divname);
 	x.hidden=true
   }
   
 //For selecting files to upload
-  function selectuploadfile(){
-	var x = document.getElementById("myFile");
+  function selectuploadfile(inputid,paraid){
+	var x = document.getElementById(inputid);
 	var txt = "";
 	if ('files' in x) {
 	  if (x.files.length == 0) {
@@ -454,44 +457,91 @@ function displayprogressbar() {
 		txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
 	  }
 	}
-	document.getElementById("demo").innerHTML = txt;
+	document.getElementById(paraid).innerHTML = txt;
   }
 
-//Uploading file on button submission
+//Uploading intent file on button submission
 $('#process-file-button').on('click', function (e) {
-	var fileInput = document.getElementById('myFile'); 
-	var filename = "";  
-	console.log("+++files length++++++++ " + fileInput.files.length)
+	var fileInput = document.getElementById(fileinputname); 
+	var filename = "";
 	for(var i=0; i<fileInput.files.length; i++){
-		if(filename!=""){
-			filename = filename + "," + fileInput.files[i].name;
+		filename = fileInput.files[i].name;
+		if(filename.includes("intents")){
+			uploadfile('myFile','myProgress_upldtrainingdata','myBar_upldtrainingdata','ico_upldtrainingcompleted','ico_upldtrainingfailed');
 		}
 		else{
-			filename = fileInput.files[i].name;
+			alert("Please select correct file");
 		}
-		
-	}	
-	console.log("+++files++++++++ " + filename)
+	}
+
 	document.getElementById("myFile").value="";
 	document.getElementById("demo").innerHTML ="";
-    let files = new FormData(), // you can consider this as 'data bag'
-		url = '/api/fileupload';
-	files.append('fileName', $('#myFile')[0].files[0]); // append selected file to the bag named 'file'
-	// console.log("+++files++++++++ " + e.target.files[0].name)
-	headers = {'filename': filename}
-    $.ajax({
-        type: 'post',
-        url: url,
-        processData: false,
-		contentType: 'application/json',
-		headers: headers,
-        data: files,
-        success: function (response) {
-            console.log(response);
-        },
-        error: function (err) {
-            console.log(err);
-        }
-	});
+  
 });
 
+//Uploading config file on button submission
+$('#process-file-button1').on('click', function (e) {
+	var fileInput = document.getElementById(fileinputname); 
+	var filename = "";
+	for(var i=0; i<fileInput.files.length; i++){
+		filename = fileInput.files[i].name;
+		if(filename.includes("intents")){
+			uploadfile('myFile1','myProgress_upldtrainingdata1','myBar_upldtrainingdata1','ico_upldtrainingcompleted1','ico_upldtrainingfailed1');
+		}
+		else{
+			alert("Please select correct file");
+		}
+	}	
+	document.getElementById("myFile1").value="";
+	document.getElementById("demo1").innerHTML ="";
+});
+
+// common function to upload file in server side
+function uploadfile(fileinputname,progress,progressbar,completeicon,failureicon){
+	var fileInput = document.getElementById(fileinputname); 
+	var filename = "";  
+	console.log("+++files length++++++++ " + fileInput.files.length);
+	let files = new FormData(), // you can consider this as 'data bag'
+		url = '/api/fileupload';
+	for(var i=0; i<fileInput.files.length; i++){
+		// files.append('fileName', $('#myFile')[0].files[i]);
+		displayprogressbar(progress,progressbar,10);
+		filename = fileInput.files[i].name;
+		var filetype="";
+		if(filename.includes("intents")){
+			filetype="intents";
+		}
+		else if(filename.includes("config")){
+			filetype="config";
+		}
+		else if(filename.includes("training")){
+			filetype="training";
+		}
+		console.log("+++files++++++++ " + filename)
+		files.append('fileName', fileInput.files[i]);
+		headers = {'filename': filename, 'filetype':filetype}
+		$.ajax({
+			type: 'post',
+			url: url,
+			processData: false,
+			contentType: 'application/json',
+			headers: headers,
+			data: files,
+			success: function (response) {
+				hideprogressbar(progress);
+				console.log(response);
+				if(response == "True"){
+					document.getElementById(completeicon).hidden=false;
+				}else{
+					document.getElementById(failureicon).hidden=false;
+				}				
+			},
+			error: function (err) {
+				hideprogressbar(progress);
+				console.log(err);
+				document.getElementById(failureicon).hidden=false;
+			}
+		});
+		
+	}	
+}
