@@ -371,24 +371,64 @@ function weathergraph() {
 }
 // Calling the training system
 $(document).ready(function () {  
-	$("#runtraining").click(function () {  
+	$("#runtraining").click(function () { 
+		document.getElementById("ico_completed").hidden=true;
+		document.getElementById("ico_failed").hidden=true;
+		document.querySelector(('#trainingdiv #runtrainingstatusmsg')).hidden=false;
+		document.querySelector(('#trainingdiv #runtrainingstatusmsg')).innerHTML="";
+		let dropdown = document.getElementById('client-dropdown');
 		console.log("++++++++++++inside run training:");
-		displayprogressbar("myProgress","myBar",50);		
-		$.post('/api/training', function (data) {  
-			console.log("++++++++++++training response:" + data);
-			console.log("++++++++++++typeof:" + typeof data);
-			console.log("++++++++++++typeof:" + typeof "true");
-			console.log("++++++++++++typeof:" + (data == "True"));
-			hideprogressbar("myProgress");
-			if(data == "True"){
-				document.getElementById("ico_completed").hidden=false;
-			} 
-			else{
-				document.getElementById("ico_failed").hidden=false;
-			}
-		});  
+		console.log("++++++++++++inside dropdown:" + dropdown.value);
+		console.log(dropdown.value === "");
+
+		if (dropdown.value!=="choose" && dropdown.value !== "" && dropdown.value!= null) {
+			console.log("++++++++++++inside iff:");
+			senddata = '{"client":"' + dropdown.value + '"}'
+			senddata_json= JSON.parse(senddata)
+			console.log("++++senddata================== " + senddata)
+			displayprogressbar("myProgress","myBar",50);		
+			$.post('/api/training',senddata, function (data, status) {  
+				console.log("++++++++++++training response:" + data);
+				console.log("++++++++++++typeof:" + typeof data);
+				console.log("++++++++++++typeof:" + typeof "true");
+				console.log("++++++++++++data == True:" + (data == "True"));
+				hideprogressbar("myProgress");
+				if(data == "True"){
+					document.getElementById("ico_completed").hidden=false;
+				} 
+				else{
+					document.getElementById("ico_failed").hidden=false;
+					errormsg = "There is a problem in server training, please try again later";
+					document.querySelector(('#trainingdiv #runtrainingstatusmsg')).hidden=false;
+					document.querySelector(('#trainingdiv #runtrainingstatusmsg')).innerHTML=errormsg;
+				}
+				if(status == "error"){
+					console.log("====Inside jquery error++++++")
+					hideprogressbar("myProgress");	
+					document.getElementById("ico_failed").hidden=false;
+				}				
+			});  
+			
+		} else {
+			console.log("++++++++++++inside elseee:");
+			errormsg = "Please select a client to proceed";
+			document.querySelector(('#trainingdiv #runtrainingstatusmsg')).hidden=false;
+			document.querySelector(('#trainingdiv #runtrainingstatusmsg')).innerHTML=errormsg;
+		}
+		
+		
 	});  
 });  
+
+// showing the error msg in case run training encounters bad request
+$( document ).ajaxError(function() {
+	hideprogressbar("myProgress");	
+	document.getElementById("ico_failed").hidden=false;
+	errormsg = "There is a problem while running the training, make sure your training data is not erronous";
+	
+	document.querySelector(('#trainingdiv #runtrainingstatusmsg')).hidden=false;
+	document.querySelector(('#trainingdiv #runtrainingstatusmsg')).innerHTML=errormsg;
+  });
 
 var i = 0;
 function move(barname, barwaittime) {
@@ -432,6 +472,7 @@ function displayprogressbar(divname,barname,barwaittime) {
 //For selecting files to upload
   function selectuploadfile(inputid,paraid){
 	var x = document.getElementById(inputid);
+	// x.value = "";
 	var txt = "";
 	if ('files' in x) {
 	  if (x.files.length == 0) {
@@ -462,10 +503,11 @@ function displayprogressbar(divname,barname,barwaittime) {
 
 //Uploading intent file on button submission
 $('#process-file-button').on('click', function (e) {
-	var fileInput = document.getElementById(fileinputname); 
+	var fileInput = document.getElementById("myFile"); 
 	var filename = "";
 	for(var i=0; i<fileInput.files.length; i++){
 		filename = fileInput.files[i].name;
+		console.log("================myfile filename==== " + filename)
 		if(filename.includes("intents")){
 			uploadfile('myFile','myProgress_upldtrainingdata','myBar_upldtrainingdata','ico_upldtrainingcompleted','ico_upldtrainingfailed');
 		}
@@ -481,7 +523,7 @@ $('#process-file-button').on('click', function (e) {
 
 //Uploading config file on button submission
 $('#process-file-button1').on('click', function (e) {
-	var fileInput = document.getElementById(fileinputname); 
+	var fileInput = document.getElementById("myFile1"); 
 	var filename = "";
 	for(var i=0; i<fileInput.files.length; i++){
 		filename = fileInput.files[i].name;
@@ -544,4 +586,59 @@ function uploadfile(fileinputname,progress,progressbar,completeicon,failureicon)
 		});
 		
 	}	
+}
+
+// Populating select client dropbox dynamically
+function populateclientdropdown(){
+	document.querySelector(('#trainingdiv #runtrainingstatusmsg')).hidden=true;
+	document.querySelector(('#trainingdiv #runtrainingstatusmsg')).innerHTML="";
+	let dropdown = document.getElementById('client-dropdown');
+	// dropdown.length = 0;
+	if(dropdown.length>0){
+
+	}
+	else{		
+		let defaultOption = document.createElement('option');
+		defaultOption.text = '- choose -';
+		defaultOption.value = 'choose';
+
+		dropdown.add(defaultOption);
+		// dropdown.selectedIndex = 0;
+
+		const url = '/api/getclients';
+
+		const request = new XMLHttpRequest();
+		request.open('GET', url, true);
+
+		request.onload = function() {
+			if (request.status === 200) {
+				const data = JSON.parse(request.responseText);
+				let option;
+				// for (let i = 0; i < data.length; i++) {
+				// option = document.createElement('option');
+				// option.text = data["client"+i];
+				// option.value = data["client"+i];
+				// dropdown.add(option);
+				// }
+				for (x in data){
+					option = document.createElement('option');
+					option.text = data[x];
+					option.value = data[x];
+					dropdown.add(option);
+				}
+				index = dropdown.selectedIndex;
+				console.log("index=============" + dropdown.text);
+				dropdown.selectedIndex = index;
+			} else {
+				// Reached the server, but it returned an error
+			}   
+		}
+
+		request.onerror = function() {
+		console.error('An error occurred fetching the JSON from ' + url);
+		};
+
+		request.send();
+	}
+	
 }
