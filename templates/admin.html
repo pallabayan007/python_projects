@@ -37,15 +37,26 @@
                 </div>
             </div>                       
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="trainingdiv">
           <h2>Get your system training done right away </h2>
           <p>
               Start training your system by cliccking the button
+          </p>
+          <p>
+            <label for="client-dropdown">Choose a Client:</label>
+            <select id="client-dropdown" name="clients" onclick="populateclientdropdown()">
+            </select>
+            {#<select id="gate">
+              <option value='null'>- choose -</option>
+              <option value='gateway_1'>Gateway 1</option>
+              <option value='gateway_2'>Gateway 2</option>
+          </select>#}
           </p>
           <p><a class="btn btn-default" id="runtraining">Run Training &raquo;</a>            
                 <img src="../../static/images/success_commit.png" id="ico_completed" hidden/>            
                 <img src="../../static/images/failure_icon.png" id="ico_failed" hidden/>
           </p>
+          <p id="runtrainingstatusmsg" style="color:tomato;" hidden><strong></strong></p> 
           <div class="progress" id="myProgress" hidden>
             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%" id="myBar">
               Training

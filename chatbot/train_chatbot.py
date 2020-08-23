@@ -108,6 +108,32 @@ import pickle
 
 # print("model created")
 
+# Set the client name in the chat_trainer section of training.ini
+def setclientfortraining(clientname):
+    print('====Inside exectraining====')
+    try:
+        parser_setclient = SafeConfigParser()
+        parser_setclient.read('chatbot/training.ini')
+        if parser_setclient.has_option('chat_trainer','client'):
+            if clientname.strip()=="":
+                print("=====Inside setclientfortraining blank client name==== " + clientname)
+                return False
+            else:                
+                print("=====Inside setclientfortraining==== " + clientname)               
+                parser_setclient.set('chat_trainer','client',clientname)
+                with open('chatbot/training.ini', 'w') as configfile:
+                    parser_setclient.write(configfile)
+                
+                print(parser_setclient.get('chat_trainer','client'))
+                return True
+        else:
+            return False
+    except Exception as e:
+        print('train_chatbot:: setclientfortraining Failed: '+ str(e))
+        return False
+    finally:
+        parser_setclient.clear
+
 def exectraining():
     try:
         print('====Inside exectraining====')

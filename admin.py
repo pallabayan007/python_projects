@@ -1,10 +1,37 @@
-from chatbot.train_chatbot import exectraining
+from chatbot.train_chatbot import exectraining, setclientfortraining
+from configparser import SafeConfigParser
+import json
 
 # For running the system training
 def runtraining():
     result = exectraining()
     return result
 
+
+# For getting the client names from the training.ini
+def gettrainingclients():
+    parser = SafeConfigParser()
+    parser.read('chatbot/training.ini')
+    print(parser._sections)
+    sections = parser._sections
+    client_dict = {}
+    i=0
+    for x in sections:
+        if x != 'chat_trainer':
+            client_dict["client"+str(i)]=x
+            i=i+1
+    i=0
+    result = json.dumps(client_dict)
+    print(result)
+    return result
+
+# For setting the client name for training
+def settingclientfortraining(clientname):
+    if setclientfortraining(clientname):
+        print("====Inside settingclientfortraining====")        
+        return True
+    else:
+        return False
 
 # For uploading files in project
 def fileupload(request):

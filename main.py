@@ -78,9 +78,18 @@ def chatcomm():
 @app.route("/api/training", methods=['GET', 'POST'])
 def systemtraining():
     print('====Inside systemtraining====')
-    reply = runtraining()
-    # print('systemtraining: ' + str(reply))
-    return reply
+    req_data=request.get_data()
+    req_data_json = json.loads(req_data)
+    print(req_data)
+    print(req_data_json['client'])
+
+    if settingclientfortraining(req_data_json['client']):
+        reply = runtraining()
+        # print('systemtraining: ' + str(reply))
+        return reply
+    else:
+        return str(False)
+    
 
 # Uploading file from admin portal
 @app.route("/api/fileupload", methods=['GET', 'POST'])
@@ -90,6 +99,13 @@ def systemfileupload():
     reply = fileupload(request)
     print('fileupload from main: ' + reply)
     return str(True)
+
+# getting the client names
+@app.route("/api/getclients", methods=['GET', 'POST'])
+def getclients():    
+    reply = gettrainingclients()
+    # print('fileupload from main: ' + reply)
+    return reply
 
 if __name__ == "__main__":
     sio.run(app, app.debug==True)
