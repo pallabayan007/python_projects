@@ -98,7 +98,7 @@ def systemfileupload():
     print('====Inside request==== ' + request.content_type)
     reply = fileupload(request)
     print('fileupload from main: ' + reply)
-    return str(True)
+    return reply
 
 # getting the client names
 @app.route("/api/getclients", methods=['GET', 'POST'])

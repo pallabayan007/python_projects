@@ -505,7 +505,7 @@ html{
   font-style: normal;
 }
 
-/* .responsive {
-  width: 100%;
+.responsive {
+  /* width: 100%; */
   height: auto;
-} */
+}

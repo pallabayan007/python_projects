@@ -52,7 +52,8 @@ def fileupload(request):
             UPLOAD_DIRECTORY = f_current_folder.replace('\\','/') + '/' 
         elif f_header_filetype.lower().find('training')>=0:
             UPLOAD_DIRECTORY = f_current_folder.replace('\\','/') + '/'  
-        
+        print("File content to be written =========")
+        print(request.data)
         with open(UPLOAD_DIRECTORY + f_header_filename, "wb") as fp:
             fp.write(request.data)
 

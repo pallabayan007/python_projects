@@ -6,6 +6,8 @@ from configparser import SafeConfigParser
 import random
 
 import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import json
@@ -150,8 +152,10 @@ def exectraining():
         intent_file_client = parser.get('chat_trainer', 'client')
         intent_file_name = parser.get(intent_file_client, 'intents')
         # intents_file = open('intents.json').read()
-        intents_file = open(intent_file_name).read()
+        intents_file = open(intent_file_name).read()        
+        print("====before loading the intent file=====")
         intents = json.loads(intents_file)
+        print("====after loading the intent file=====")
 
         for intent in intents['intents']:
             for pattern in intent['patterns']:

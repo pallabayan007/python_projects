@@ -36,7 +36,7 @@
         },
         {"tag": "blood_pressure",
          "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
-         "responses": ["Navigating to Blood Pressure module"],
+         "responses": ["Navigating to Blood Pressure module, meanwhile you can check https://medlineplus.gov/highbloodpressure.html"],
          "context": [""]
         },
         {"tag": "blood_pressure_search",

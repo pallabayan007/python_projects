@@ -527,7 +527,7 @@ $('#process-file-button1').on('click', function (e) {
 	var filename = "";
 	for(var i=0; i<fileInput.files.length; i++){
 		filename = fileInput.files[i].name;
-		if(filename.includes("intents")){
+		if(filename.includes("config") || filename.includes("training")){
 			uploadfile('myFile1','myProgress_upldtrainingdata1','myBar_upldtrainingdata1','ico_upldtrainingcompleted1','ico_upldtrainingfailed1');
 		}
 		else{
@@ -545,6 +545,7 @@ function uploadfile(fileinputname,progress,progressbar,completeicon,failureicon)
 	console.log("+++files length++++++++ " + fileInput.files.length);
 	let files = new FormData(), // you can consider this as 'data bag'
 		url = '/api/fileupload';
+	// console.log("===at first files=== " + files.)
 	for(var i=0; i<fileInput.files.length; i++){
 		// files.append('fileName', $('#myFile')[0].files[i]);
 		displayprogressbar(progress,progressbar,10);
@@ -560,7 +561,8 @@ function uploadfile(fileinputname,progress,progressbar,completeicon,failureicon)
 			filetype="training";
 		}
 		console.log("+++files++++++++ " + filename)
-		files.append('fileName', fileInput.files[i]);
+		console.log("+++files content+++: " + fileInput.files[i])
+		// files.append('fileName', fileInput.files[i]);
 		headers = {'filename': filename, 'filetype':filetype}
 		$.ajax({
 			type: 'post',
@@ -568,7 +570,7 @@ function uploadfile(fileinputname,progress,progressbar,completeicon,failureicon)
 			processData: false,
 			contentType: 'application/json',
 			headers: headers,
-			data: files,
+			data: fileInput.files[i],			
 			success: function (response) {
 				hideprogressbar(progress);
 				console.log(response);
@@ -590,6 +592,8 @@ function uploadfile(fileinputname,progress,progressbar,completeicon,failureicon)
 
 // Populating select client dropbox dynamically
 function populateclientdropdown(){
+	document.getElementById("ico_completed").hidden=true;
+	document.getElementById("ico_failed").hidden=true;
 	document.querySelector(('#trainingdiv #runtrainingstatusmsg')).hidden=true;
 	document.querySelector(('#trainingdiv #runtrainingstatusmsg')).innerHTML="";
 	let dropdown = document.getElementById('client-dropdown');
