@@ -1,2 +1,8 @@
 Flask
 Werkzeug
+keras
+pymongo
+nltk
+pickle
+numpy
+configparser
