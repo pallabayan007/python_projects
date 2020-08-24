@@ -12,6 +12,7 @@ import json
 import random
 import re
 import logging
+import requests
 
 
 # model = load_model('chatbot/chatbot_model.h5')
@@ -61,6 +62,7 @@ def load_configs(client):
     global words
     global classes
     global model  
+    global data
 
     try:
         # parser_chatbot.read('chatbot/config.ini')
@@ -173,8 +175,13 @@ def getResponse(ints, intents_json, msg):
                 print("customer id: " + str(customerid))  
                 response = getbankaccounts(str(customerid))
                 if response is None:
+                    print('within if')
                     result = "Oops! it seems there is some problem in the system, please try again later"
+                elif "validation error" in response:
+                    print('within elif')
+                    result = response.replace('validation error:', '')
                 else:
+                    print('within else')
                     result = "Please select the account from the list:" + json.loads(response)["account number"]    
                 
                 
@@ -184,6 +191,9 @@ def getResponse(ints, intents_json, msg):
                 response = getbankbalance(str(accno))
                 if response is None:
                     result = "Oops! it seems there is some problem in the system, please try again later"
+                elif "validation error" in response:
+                    print('within elif')
+                    result = response.replace('validation error:', '')                
                 else:
                     result = "Your account balance is $" + json.loads(response)["balance"]                 
                 
@@ -192,21 +202,24 @@ def getResponse(ints, intents_json, msg):
                 break
     return result
 
-import requests
-
 
 def getbankaccounts(customerid):
     bad_chars = ['[', ']', "'", "'"]
     for i in bad_chars : 
         customerid = customerid.replace(i, '')
     print(customerid)
-    resp = requests.get('http://40.87.0.100:8080/accno',
+    print(data['ac_api'])
+    resp = requests.get(data['ac_api'],
                             headers={'customerid':customerid})
     if resp.status_code != 200:
         # This means something went wrong.
         # raise ApiError('GET /tasks/ {}'.format(resp.status_code))
         print('error happened:' + str(resp.status_code) + ":" + resp.text)
-        return None
+        if "Customer ID is less than 10 digits" in resp.text:
+            return "validation error:" + resp.text.replace('Incorrect Header.','') + ", please provide the correct id"
+        else:
+            return None
+        
     # for todo_item in resp.json():
     else:
         # print('Response: ' + json.dumps(resp.json))
@@ -219,13 +232,16 @@ def getbankbalance(accno):
     for i in bad_chars : 
         accno = accno.replace(i, '')
     print(accno)
-    resp = requests.get('http://40.87.0.100:8080/balance',
+    resp = requests.get(data['balance_api'],
                             headers={'accno':accno})
     if resp.status_code != 200:
         # This means something went wrong.
         # raise ApiError('GET /tasks/ {}'.format(resp.status_code))
         print('error happened:' + str(resp.status_code) + ":" + resp.text)
-        return None
+        if "Account number is less than 11 digits" in resp.text:
+            return "validation error:" + resp.text.replace('Incorrect Header.','') + ", please provide the correct id"
+        else:
+            return None      
     # for todo_item in resp.json():
     else:
         # print('Response: ' + json.dumps(resp.json))
