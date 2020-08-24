@@ -11,4 +11,4 @@ tensorflow
 punkt
 tensorflow==2.3.0
 flask_socketio
-dnspython=2.0.0
+dnspython==2.0.0
