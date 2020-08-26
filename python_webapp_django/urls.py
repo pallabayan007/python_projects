@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
     url('^weather/$', app.views.graphs, name="weather_graph"),
+    url(r'^ajax/validate_username/$', app.views.validate_username, name='validate_username'),
     # url(r'^login/$',
     #     app.views.login,
     #     {

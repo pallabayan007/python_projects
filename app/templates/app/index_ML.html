@@ -30,9 +30,48 @@
         <p><a class="btn btn-default" href="weather/">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Continuous Delivery</h2>
-        <p>View your CI/CD pipeline on Visual Studio Team Services and customize it as per your needs</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?linkid=862410">Learn more &raquo;</a></p>
+        <h2>24X7 Support Assistance</h2>
+        <p>You can reach out to our new chat assistant Lima whenever needed</p>        
+        <p><a class="btn btn-default" id="myBtn">Click To Chat &raquo;</a></p>
+        <!-- <button class="open-button" onclick="openForm()">Chat</button> -->
+        <div class="chat-popup" id="myForm">
+            <form class="form-container" target="_blank" id="content">
+                <h1>Chat</h1>
+				<label for="msg"><b>Message</b></label>
+                <!-- <textarea placeholder="Type message.." name="msg" required></textarea> -->
+                <textarea id="txtcontent"></textarea>
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>  
+            </form>
+        </div>    
+        <!-- <div> 
+            <object type="text/html" data="http://52.255.201.244:5000/bank" width="800px" height="600px" style="overflow:auto;border:5px ridge blue">
+            </object>
+        </div> -->
+        <!-- <div class="my-chat" id="mycontent" width="800px" height="600px" style="overflow:auto;border:5px ridge blue">         
+        </div> -->
+        
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" id="modalclose">&times;</span>
+                <h4>Lima Chatbot - Hi<user class="user" id="my_username">
+                    {{user.username}}
+                </user>!!!!</h4>
+            </div>
+            <div class="modal-body" id="myModalbody">
+                <!-- <p>Some text in the Modal Body</p>
+                <p>Some other text...</p> -->
+            </div>
+            <div class="modal-footer">
+                <h5>&copy;<script>document.write( new Date().getFullYear() );</script> - Lima Chatbot Application</h5>
+            </div>
+            </div>
+        
+        </div>
+        
     </div>
     <div class="col-md-4">
         <h2>Azure DevOps Project</h2>
@@ -40,6 +79,7 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?linkid=862126">Learn more &raquo;</a></p>
     </div>
 </div>
+
 
 {% endblock %}
 
@@ -49,5 +89,6 @@
 
 <script src="{% static 'app/scripts/respond.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 {% endblock %}

@@ -1,1 +1,6 @@
 django >=3.0, <4
+pymongo
+configparser
+gunicorn
+scipy==1.4.1
+numpy==1.18.5

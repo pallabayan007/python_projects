@@ -38,11 +38,17 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+from django.http import JsonResponse
+from django.contrib.auth.models import User
+from django.contrib.auth import models
+from configparser import SafeConfigParser
+from pymongo import MongoClient
 import urllib, base64
 from app.cosmosdbconn import *
 #--------------------------------------------------------------
 #Custom imports
 #--------------------------------------------------------------
+User = get_user_model()
 
 
 #--------------------------------------------------------------
@@ -118,6 +124,53 @@ def graphs(request):
                  'year':datetime.now().year,
             }
     )
+def getdbconn():
+    print("Inside getdbconn")
+    try:
+        global parser_chatbot
+        parser_chatbot = SafeConfigParser()
+        parser_chatbot.read('config.ini')
+        dbconn = MongoClient(parser_chatbot.get('mongo_db', 'connection'))
+    except Exception as e:
+        print('getdbconn Failed: '+ str(e))
+    
+    return dbconn
+
+def validate_username(request):
+    global parser_chatbot
+    global dbconn  
+    parser_chatbot = SafeConfigParser()
+    parser_chatbot.read('app/config.ini')
+    print(parser_chatbot._sections)
+    dbconn = MongoClient(parser_chatbot.get('mongo_db', 'connection'))  
+    try: 
+        username = request.GET.get('username', None)
+        print('username from views: ' + username)
+        u = User.objects.get(username=username)
+        print(u.client)
+        print(parser_chatbot.get('mongo_db', 'db'))
+        db = dbconn[parser_chatbot.get('mongo_db', 'db')]
+        collection = db[parser_chatbot.get('mongo_db', 'collection')]
+        print("collection name: " + collection.name)    
+        dbdata = collection.find_one({"client":u.client}) 
+        url = dbdata['url']    
+        # data = {
+        #     'is_taken': User.objects.filter(username__iexact=username).exists()
+        # }
+        data = {
+            'url': url
+        }
+        return JsonResponse(data)
+    except Exception as e:
+        print('getdbconn Failed: '+ str(e))
+        return JsonResponse({'err_msg':str(e)})
+    
+    finally:
+        dbconn.close
+    
+    
+
+
 
 # def login(request):
 #     """Renders the about page."""

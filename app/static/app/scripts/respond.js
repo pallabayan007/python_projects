@@ -367,9 +367,85 @@ function weathergraph() {
 	// 	$.get('/weather/',
 	// 		  function(response){ $('#response_msg').text(response.msg);}
 	// 	);
-	// });
-	 
-  
+	// });  
 }
+
+function openForm() {
+	document.getElementById("myForm").style.display = "block";
+  }
+
+function closeForm() {
+	document.getElementById("myForm").style.display = "none";
+}
+
+// $(document).ready(function(){
+   
+// 	$('#content').load("about.html");
+ 
+//  });
+
+
+
+// $("#myModalbody")
+// .html('<object data="http://52.255.201.244:5000/bank" width="950px" height="350px" style="overflow:auto;border:5px white"/>');
+	
+// $("#modalclose").onclick(location.reload());
+
+// ==================================================================================
+// Modal pop up
+// ==================================================================================
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+  var username = document.getElementById("modalclose");
+  var user = document.getElementById("my_username").textContent.trim();
+	console.log("username========================: " + user );
+	$.ajax({
+        url: '/ajax/validate_username/',
+        data: {
+          'username': user
+        },
+        dataType: 'json',
+        success: function (data) {			
+          if (data.url != null || data.url.trim != "") {
+			// alert("A user with this username already exists.");
+			console.log(data.url)
+			$("#myModalbody")
+				.html('<object data="' + data.url + '" width="975px" height="350px" style="overflow:auto;border:5px white"/>');
+
+          }
+		},
+		error: function(err){
+			console.log(err.err_msg);
+		}
+      });
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  location.reload();
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// ==================================================================================
+// ==================================================================================
+  
 
 
