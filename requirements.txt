@@ -3,12 +3,10 @@ Werkzeug
 keras==2.4.3
 pymongo
 nltk
-pickle
+scipy==1.4.1
 numpy==1.18.5
 configparser
 flask_socketio
-tensorflow
-punkt
 tensorflow==2.3.0
-flask_socketio
 dnspython==2.0.0
+gunicorn

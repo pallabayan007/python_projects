@@ -63,7 +63,7 @@ div {
   overflow: auto;
 }
 .chatMenuSection{
-	height:8%;
+	height:50px;
 	width:100%;
 	font-weight:bold;
 	background: rgb(255,255,255) none repeat scroll 0 0;
@@ -507,5 +507,8 @@ html{
 
 .responsive {
   /* width: 100%; */
+  resize: both;
+  max-width: 50vw;
   height: auto;
+  max-height: 10vh;
 }
