@@ -34,9 +34,20 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?linkid=862410">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Azure DevOps Project</h2>
-        <p>Learn more about all you can do with Azure DevOps project by visiting the documentation</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?linkid=862126">Learn more &raquo;</a></p>
+        <h2>Talk to our Chat Assistant</h2>
+        <p>Now you can talk to our chat assistant 24X7 to get help on basic queries</p>
+        <p><a class="btn btn-default" onclick="openForm()">Chat &raquo;</a></p>
+        <div class="chat-popup" id="myForm">
+            <form class="form-container" target="_blank" id="content">
+                <h1>Chat</h1>
+				<label for="msg"><b>Message</b></label>
+                <!-- <textarea placeholder="Type message.." name="msg" required></textarea>
+                <textarea id="txtcontent"></textarea> -->
+                <!-- <button type="submit" class="btn">Send</button> -->
+                  
+            </form>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </div>  
     </div>
 </div>
 
