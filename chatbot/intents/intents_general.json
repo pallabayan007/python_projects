@@ -1,0 +1,43 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi","Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        {"tag": "options",
+                "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered","plz help","help needed"],
+                "responses": ["I can guide you through general procedures and contact details"],
+                "context": [""]
+        },
+        {"tag": "cust_care_no",
+                "patterns": ["customer care number plz","customer care no plz","cust care no plz","Show me the cust care number please","Show me a number to call you", "number to call you"],
+                "responses": ["Sure, our customer care number is +1800-000-0000 & it is available 24X7"],
+                "context": [""]
+        },
+        {"tag": "cust_care_email",
+                "patterns": ["customer care email plz","customer care email plz","cust care email plz","Show me the cust care email please","Show me a email", "your's email"],
+                "responses": ["Sure our customer care email id is care@unknowdomain.com"],
+                "context": [""]
+        },
+        {"tag": "refund_policy",
+                "patterns": ["please tell me your refund policy","plz tell me your refund policy","plz tell me ur refund policy","refund policy", "what is your refund policy"],
+                "responses": ["You can find our refund policy at https://www.amazon.com/gp/help/customer/display.html?nodeId=508510&ref_=nav_cs_customerservice"],
+                "context": [""]
+        }        
+   ]
+}

@@ -28,6 +28,10 @@ clients = []
 # These routing are made for different client's chatbot landing page
 # The url is used to get the client name from the end 
 # The client name is passed in to sendrequest of api.js
+@app.route("/general")
+def home_general():
+    return render_template("chatbot.html")
+
 @app.route("/bank")
 def home_bank():
     # parser['clients']['client'] = 'bank'
