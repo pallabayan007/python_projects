@@ -31,12 +31,12 @@
         },
         {"tag": "cust_id",
                 "patterns": ["my customer id is","id is","that would be "],
-                "responses": ["Please wait while I fetch the data"],
+                "responses": ["Please wait while I fetch the data, it may take upto few minutes!!!"],
                 "context": [""]
         },
         {"tag": "bankac_balance",
                 "patterns": ["my account is","that would be ","ac is"],
-                "responses": ["Please wait while I fetch the data"],
+                "responses": ["Please wait while I fetch the data, it may take upto few minutes!!!"],
                 "context": [""]
         }        
    ]

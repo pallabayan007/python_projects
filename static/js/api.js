@@ -36,9 +36,11 @@ var Api = (function() {
     var payloadToWatson = {};
     if (text) {
       console.log('Inside payload text: ' + text)
+      console.log('Inside payload text socket id : ' + socket.id)
       payloadToWatson.input = {
         text: text,
-        client: client
+        client: client,
+        socket_id: socket.id
       };
       console.log('Inside payloadToWatson text: ' + payloadToWatson.input)
     }

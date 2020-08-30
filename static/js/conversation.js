@@ -5,6 +5,37 @@
 //require("./api");
 var conversationId = null;
 var counter = 0;
+var socket = io();
+var event_name = "";
+
+socket.on("connect", () => {
+  console.log("Connected!");
+  console.log("Socket ID: " + socket.id);
+  event_name = socket.id+"_my_message";
+
+});
+socket.on("disconnect", () => {
+  console.log("Lost connection to the server.");
+});
+
+function load_welcome(){
+	// alert("Image is loaded");
+    // console.log("showgreetingmsg=============: " + socket.id);
+    // Api.sendRequest("welcome", "");
+    // // console.log("showgreetingmsg=============: " + socket.id);
+    // console.log("event_name: " + event_name);
+    // socket.on(event_name, function(logMessage){ 
+    // console.log("Socket ID: " + socket.id);       
+    // console.log("*********** showgreetingmsg from socket server *******"+JSON.stringify(logMessage));		  
+    // var newPayLoad = null;
+    // newPayLoad = {"output" : {"text" :logMessage}};
+    // ConversationPanel.displayMessage(newPayLoad, 'watson');	
+    // document.getElementById("textInput").disabled = false;
+    // document.getElementById("textInput").focus();	  
+    // });	
+  }
+
+
 var ConversationPanel = (function() {
 	
   var settings = {
@@ -26,6 +57,7 @@ var ConversationPanel = (function() {
     inputKeyDown: inputKeyDown,
 	  instantiateEventHanders: instantiateEventHanders,
     displayMessage: displayMessage
+    // showgreetingmsg: showgreetingmsg
   };
 
   // Initialize the module
@@ -226,7 +258,8 @@ var ConversationPanel = (function() {
     if (scrollEl) {
       scrollingChat.scrollTop = scrollEl.offsetTop;
     }
-  }
+  }  
+
   // Handles the submission of input
   function inputKeyDown(event, inputBox) {
     // Submit on enter key, dis-allowing blank messages
@@ -248,19 +281,8 @@ var ConversationPanel = (function() {
       // Clear input box for further messages
       inputBox.value = '';
       Common.fireEvent(inputBox, 'input');
-      // const socket = io('ws://localhost:5000');
-      // socket.on("connect", () => {
-      //   console.log("Connected!");
-      //   console.log("Socket ID: " + socket.id)
-
-      // });
-      // socket.on("disconnect", () => {
-      //   console.log("Lost connection to the server.");
-      // });
-      // socket.emit("message", inputBox.value);
-      // socket.on("response", message => {
-      //   console.log("response:", message);
-      // });
+      console.log("++++inputKeyDown========Socket ID: " + socket.id)
+      
     }
   }
   
@@ -275,24 +297,39 @@ var ConversationPanel = (function() {
   counter++;
 	var user = conversationId;
   // console.log("HHHHHHHHHHHHHH conversationId    "+user);	
-    socket.on("connect", () => {
-        console.log("Connected!");
-        console.log("Socket ID: " + socket.value)
-    });
-    
-    
-		socket.on('message', function(logMessage){
-      
-		  console.log("*********** input_context *******"+JSON.stringify(logMessage));		  
+    // Add a connect listener
+    // socket.on('connect',function() {
+    //   console.log('Client has connected to the server!');
+    //   console.log("Socket ID: " + socket.id)
+    //   // console.log("Socket ID: " + socket.server.ip)
+    // });   
+    // socket.send("message","my hello from client send") 
+    // socket.emit("message", "my hello from client emit");    
+    // var even_name = socket.id+"_my_message"
+    console.log("event_name: " + event_name);
+		socket.on(event_name, function(logMessage){ 
+      console.log("Socket ID: " + socket.id);     
+      socket.emit("client_message","my hello from client send")
+		  console.log("*********** input_context from socket client *******"+JSON.stringify(logMessage));		  
 			  var newPayLoad = null;
 				newPayLoad = {"output" : {"text" :logMessage}};
         ConversationPanel.displayMessage(newPayLoad, 'watson');	
         document.getElementById("textInput").disabled = false;
 		    document.getElementById("textInput").focus();	  
-	  });	
+    });	
+    // Add a disconnect listener
+    // socket.on('disconnect',function() {
+    //   console.log('The client has disconnected!');
+    // });
+    // Sends a message to the server via sockets
+    // function sendMessageToServer() {
+    //   socket.send("This is a hi from client");
+    // };
 	}
  }
+  
 }());
+
 
 function displayTime() {
     var str = "";

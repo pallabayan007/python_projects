@@ -13,6 +13,8 @@ import random
 import re
 import logging
 import requests
+import time
+import asyncio
 
 
 # model = load_model('chatbot/chatbot_model.h5')
@@ -164,7 +166,11 @@ def predict_class(sentence):
     return return_list
 
 # It returns the response to the chatbot
-def getResponse(ints, intents_json, msg):
+def getResponse(ints, intents_json, json_msg):
+    msg = json_msg["input"]["text"]    
+    sockid = json_msg["input"]["socket_id"]
+    event_name = sockid+"_my_message"
+    print("event_name from getResponse: " + event_name)
     tag = ints[0]['intent']
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
@@ -172,8 +178,17 @@ def getResponse(ints, intents_json, msg):
             if i['tag']=='cust_id': 
                 print('msg is: ' + msg)  
                 customerid = re.findall(r'\d+', msg)
-                print("customer id: " + str(customerid))  
+                print("customer id: " + str(customerid)) 
+                # if not socketemitmsg(event_name):
+                #     break      
+                # getbankaccounts(event_name,str(customerid))
+                # sio.emit(event_name,"Please wait this may take upto few minutes!!")                 
+                # result = random.choice(i['responses'])
+                # print("result: " + result)                
                 response = getbankaccounts(str(customerid))
+                # loop = asyncio.new_event_loop()
+                # asyncio.set_event_loop(loop)
+                # loop.run_until_complete(getbankaccounts(event_name,str(customerid)))
                 if response is None:
                     print('within if')
                     result = "Oops! it seems there is some problem in the system, please try again later"
@@ -183,11 +198,13 @@ def getResponse(ints, intents_json, msg):
                 else:
                     print('within else')
                     result = "Please select the account from the list:" + json.loads(response)["account number"]    
-                
+                # return result
+                break
                 
             elif i['tag']=='bankac_balance': 
                 accno = re.findall(r'\d+', msg) 
-                print("account number: " + str(accno))                
+                print("account number: " + str(accno))         
+                # sio.emit(event_name,"Please wait this may take upto few minutes!!")        
                 response = getbankbalance(str(accno))
                 if response is None:
                     result = "Oops! it seems there is some problem in the system, please try again later"
@@ -195,15 +212,24 @@ def getResponse(ints, intents_json, msg):
                     print('within elif')
                     result = response.replace('validation error:', '')                
                 else:
-                    result = "Your account balance is $" + json.loads(response)["balance"]                 
+                    result = "Your account balance is $" + json.loads(response)["balance"]  
+                # return result
+                break               
                 
             else:                
                 result = random.choice(i['responses'])
+                # return result
                 break
-    return result
+    return result    
 
+# def socketemitmsg(event_name):
+#     sio.emit(event_name,"Please wait this may take upto few minutes!!")
+#     time.sleep(2)
+#     return True
 
 def getbankaccounts(customerid):
+    # sock_reply = "Please wait while I fetch the data, it may take upto few minutes!!!"
+    # sio.emit(event_name,sock_reply)
     bad_chars = ['[', ']', "'", "'"]
     for i in bad_chars : 
         customerid = customerid.replace(i, '')
@@ -217,14 +243,23 @@ def getbankaccounts(customerid):
         print('error happened:' + str(resp.status_code) + ":" + resp.text)
         if "Customer ID is less than 10 digits" in resp.text:
             return "validation error:" + resp.text.replace('Incorrect Header.','') + ", please provide the correct id"
+            # sock_reply = "Customer ID is less than 10 digits, please provide the correct id"
+            # sio.emit(event_name,sock_reply)             
         else:
+            # sock_reply = "Oops! it seems there is some problem in the system, please try again later"
+            # sio.emit(event_name,sock_reply) 
             return None
         
     # for todo_item in resp.json():
     else:
         # print('Response: ' + json.dumps(resp.json))
         print('response received: ' + resp.text)
+        # print('resp["account number"]: ' + json.loads(resp.text)["account number"])
+        # sock_reply = "Please select the account from the list:" + json.loads(resp.text)["account number"]
+        # sio.emit(event_name,sock_reply)  
         return resp.text
+    # time.sleep(5)
+    # sio.emit(event_name,sock_reply) 
     
 
 def getbankbalance(accno):
@@ -251,17 +286,19 @@ def getbankbalance(accno):
         # print('{} {}'.format(todo_item['id'], todo_item['summary']))
         return resp.text
 
-def send(msg,client):
-    print('msg from send(): ' + msg)
-    print('client from send(): ' + client)
+def send(socket,json_data):
+    global sio
+    sio = socket
+    print('msg from send(): ' + json_data["input"]["text"])
+    print('client from send(): ' + json_data["input"]["client"])
     try:
-        load_configs(client)
+        load_configs(json_data["input"]["client"])
         print('loading config is successful')
     except:
         return 'There is some problem in the getting to the chat assistance; please try later!' 
     
-    ints = predict_class(msg)
-    result = getResponse(ints, intents, msg)
+    ints = predict_class(json_data["input"]["text"])
+    result = getResponse(ints, intents, json_data)
     return result
 
 # #Creating tkinter GUI

@@ -14,7 +14,7 @@
   <link href="static/template/layout.html" rel="import" />
 
 </head>
-<body >
+<body>
   <div id="contentParent" class="responsive-columns-wrapper">
     <div id="chat-column-holder" class="responsive-column content-column">
     	<div class="chatMenuSection">
@@ -29,8 +29,7 @@
 	
       <div class="chat-column">
         <div id="scrollingChat"></div>
-        <label for="textInput" class="inputOutline">
-		
+        <label for="textInput" class="inputOutline">		
           <input id="textInput" class="input responsive-column"
             placeholder="Type something" type="text"
             onkeydown="ConversationPanel.inputKeyDown(event, this), ConversationPanel.instantiateEventHanders(event)">
@@ -39,9 +38,9 @@
     </div>
   </div>
 <style>
-</style>
-  <script src="static/js/common.js"></script>
-  <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+</style>   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+  <script src="static/js/common.js"></script> 
   <script src="static/js/api.js"></script>
   <script type="text/javascript"></script>
   <script src="static/js/conversation.js"></script>
@@ -50,3 +49,5 @@
   
 </body>
 </html>
+
+
