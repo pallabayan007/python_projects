@@ -186,7 +186,7 @@ def sendtofb(sender_id, text):
     msg = send(sio, sender_json)
     body = {"messaging_type": "RESPONSE",
             "recipient": {
-                "id": sender_json["sender_id"]
+                "id": sender_id
             },
             "message": {
                 "text": msg
