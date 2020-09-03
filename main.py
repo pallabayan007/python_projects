@@ -67,11 +67,14 @@ def chatcomm():
     print("input: " + request.json["input"]["text"])
     msg = request.json["input"]["text"]
     client = request.json["input"]["client"]
-    print("msg : " + msg + ": client : " + client) 
-    if msg == "welcome":
-        event_name = request.json["input"]["socket_id"]+"_my_message"
-        print("event_name: " + event_name)
-        sio.emit(event_name,"Welcome to Lima Chat Support Agent")    
+    print("msg : " + msg + ": client : " + client)
+    # if current_context != "" :
+    if msg == "welcome" :
+        # event_name = request.json["input"]["socket_id"]+"_my_message"
+        # print("event_name: " + event_name)
+        # sio.emit(event_name,"Welcome to Lima Chat Support Agent")   
+        print("==================current_context from main===================")
+        # print()
     else:
         try:
             if "id" in msg:
@@ -217,7 +220,7 @@ def wachat():
     sender_json = {
                     "input": {
                             "text": incoming_msg,
-                            "client": "general",
+                            "client": "bank",
                             "socket_id": ""
                         }
                     }

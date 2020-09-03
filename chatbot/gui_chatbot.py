@@ -16,6 +16,10 @@ import requests
 import time
 import asyncio
 
+current_context = ""
+current_seq = ""
+current_tag = ""
+tag = ""
 
 # model = load_model('chatbot/chatbot_model.h5')
 # intents = json.loads(open('chatbot/intents/intents.json').read())
@@ -134,6 +138,7 @@ def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     # stemming every word - reducing to base form
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
+    # print(sentence_words)
     return sentence_words
 
 
@@ -141,85 +146,201 @@ def clean_up_sentence(sentence):
 def bag_of_words(sentence, words, show_details=True):
     # tokenizing patterns
     sentence_words = clean_up_sentence(sentence)
+    # print(sentence_words)
     # bag of words - vocabulary matrix
     bag = [0]*len(words)  
     for s in sentence_words:
         for i,word in enumerate(words):
+            # print(word)
+            # print(s)
             if word == s: 
                 # assign 1 if current word is in the vocabulary position
                 bag[i] = 1
                 if show_details:
                     print ("found in bag: %s" % word)
+    # print(np.array(bag))
     return(np.array(bag))
 
 def predict_class(sentence):
     # filter below  threshold predictions
-    p = bag_of_words(sentence, words,show_details=False)
+    # print(sentence)
+    # print(words)
+    p = bag_of_words(sentence, words, show_details=False)
+    # print(p)
+    # print(np.array([p]))
     res = model.predict(np.array([p]))[0]
+    print("predict_class - res")
+    print(res)
     ERROR_THRESHOLD = 0.25
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
+    print("predict_class - results")
+    print(results)
     # sorting strength probability
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
+    # return_context = []
     for r in results:
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
+        # return_context.append({"context": classes[r[0]], "probability": str(r[1])})
+    print(return_list)
+    # print(return_context)
     return return_list
 
+# It implements the context & sequencing
+# & returns the response to the chatbot
+def checkcontext(ints, intents_json, json_msg):
+    global current_context
+    global current_seq
+    global current_tag
+    global tag
+    global seq_err_occurred
+    seq_err_occurred = False
+    try:
+        # msg = json_msg["input"]["text"]
+        sockid = json_msg["input"]["socket_id"]
+        event_name = sockid+"_my_message"
+        print("event_name from checkcontext: " + event_name)
+        tag = ints[0]['intent']
+        list_of_intents = intents_json['intents']
+        for j in list_of_intents:
+            if(j['tag']== tag):
+                print("current_context: " + current_context)
+                print("current_seq: " + current_seq)
+                print("current_tag: " + current_tag)
+                print(j)
+                print(type(j))
+                print(j["context"])
+                print(j["sequence"])
+                print('j[tag]: ' + j['tag'] + ' :tag: ' + tag)
+                if current_context != None and current_context.strip() != "" and current_context == (j['context']).strip():
+                    print("Inside current context if: " + current_context)
+                    if current_seq != None and current_seq.strip() != "":
+                        print("Inside current seq if: " + current_seq)
+                        if int(j['sequence']) == (int(current_seq)+1):
+                            print("=====Inside current seq increment if:========== " + current_seq)
+                            # tag = ints[0]['intent']
+                            result = getResponse(ints, intents_json, json_msg)
+                            current_tag = tag
+                            current_context = j['context'].strip()
+                            current_seq = j['sequence'].strip()
+                            break
+                        else:
+                            print("=====Inside current seq increment else:========== " + current_seq)
+                            seq_err_occurred = True
+                            tag = current_tag
+                            # sio.emit(event_name,"Sorry, can't understand your input")
+                            result = getResponse(ints, intents_json, json_msg)
+                            break
+                    else:
+                        print("Inside current seq else: " + current_seq)
+                        tag = ints[0]['intent']
+                        result = getResponse(ints, intents_json, json_msg)
+                        current_tag = tag
+                        current_context = j['context'].strip()
+                        current_seq = j['sequence'].strip()
+                        break
+                else:
+                    print("Inside current context else: " + current_context)
+                    tag = ints[0]['intent']
+                    result = getResponse(ints, intents_json, json_msg)
+                    current_tag = tag
+                    current_context = j['context'].strip()
+                    current_seq = j['sequence'].strip()
+                    break        
+    except Exception as e:
+        print('gui_chatbot:: checkcontext Failed: '+ str(e))
+        result = "Oops! it seems there is some difficulties faced in the system, please try again later" 
+    
+    if seq_err_occurred:
+        # sio.emit(event_name,"Sorry, can't understand your input")
+        # return_socket_msg(event_name,"Sorry, can't understand your input")
+        seq_err_occurred = False
+        return ("Sorry, can't understand your input."+"\\n"+result)
+    else:
+        return result
+
+def return_socket_msg(event_name, msg):
+    sio.emit(event_name,msg)
+
 # It returns the response to the chatbot
-def getResponse(ints, intents_json, json_msg):
-    msg = json_msg["input"]["text"]    
-    sockid = json_msg["input"]["socket_id"]
-    event_name = sockid+"_my_message"
-    print("event_name from getResponse: " + event_name)
-    tag = ints[0]['intent']
-    list_of_intents = intents_json['intents']
-    for i in list_of_intents:
-        if(i['tag']== tag):
-            if i['tag']=='cust_id': 
-                print('msg is: ' + msg)  
-                customerid = re.findall(r'\d+', msg)
-                print("customer id: " + str(customerid)) 
-                # if not socketemitmsg(event_name):
-                #     break      
-                # getbankaccounts(event_name,str(customerid))
-                # sio.emit(event_name,"Please wait this may take upto few minutes!!")                 
-                # result = random.choice(i['responses'])
-                # print("result: " + result)                
-                response = getbankaccounts(str(customerid))
-                # loop = asyncio.new_event_loop()
-                # asyncio.set_event_loop(loop)
-                # loop.run_until_complete(getbankaccounts(event_name,str(customerid)))
-                if response is None:
-                    print('within if')
-                    result = "Oops! it seems there is some problem in the system, please try again later"
-                elif "validation error" in response:
-                    print('within elif')
-                    result = response.replace('validation error:', '')
-                else:
-                    print('within else')
-                    result = "Please select the account from the list:" + json.loads(response)["account number"]    
-                # return result
-                break
-                
-            elif i['tag']=='bankac_balance': 
-                accno = re.findall(r'\d+', msg) 
-                print("account number: " + str(accno))         
-                # sio.emit(event_name,"Please wait this may take upto few minutes!!")        
-                response = getbankbalance(str(accno))
-                if response is None:
-                    result = "Oops! it seems there is some problem in the system, please try again later"
-                elif "validation error" in response:
-                    print('within elif')
-                    result = response.replace('validation error:', '')                
-                else:
-                    result = "Your account balance is $" + json.loads(response)["balance"]  
-                # return result
-                break               
-                
-            else:                
-                result = random.choice(i['responses'])
-                # return result
-                break
+def getResponse(ints, intents_json, json_msg):    
+
+    try:
+        global current_context
+        global seq_err_occurred
+        seq_err_occurred = False
+        msg = json_msg["input"]["text"]
+        sockid = json_msg["input"]["socket_id"]
+        event_name = sockid+"_my_message"
+        print("event_name from getResponse: " + event_name)
+        print(ints)
+        print(intents_json)
+        if current_context!= None and current_context.strip()!= "" and current_context!=ints[0]['intent']:
+            tag = "noanswer"
+            seq_err_occurred = True
+        else:
+            tag = ints[0]['intent']
+            seq_err_occurred = False
+        # tag = ints[0]['intent']
+        print("tag: " + tag)
+        list_of_intents = intents_json['intents']
+        for i in list_of_intents:
+            print(current_context)
+            if(i['tag']== tag):
+                if not seq_err_occurred:
+                    current_context = i['context'][0]
+                if i['tag']=='cust_id':
+                    # current_context = i['context'][0]
+                    print('msg is: ' + msg)
+                    customerid = re.findall(r'\d+', msg)
+                    print("customer id: " + str(customerid))
+                    # if not socketemitmsg(event_name):
+                    #     break      
+                    # getbankaccounts(event_name,str(customerid))
+                    # sio.emit(event_name,"Please wait this may take upto few minutes!!")                 
+                    # result = random.choice(i['responses'])
+                    # print("result: " + result)                
+                    response = getbankaccounts(str(customerid))
+                    # loop = asyncio.new_event_loop()
+                    # asyncio.set_event_loop(loop)
+                    # loop.run_until_complete(getbankaccounts(event_name,str(customerid)))
+                    if response is None:
+                        print('within if')
+                        result = "Oops! it seems there is some problem in the system, please try again later"
+                    elif "validation error" in response:
+                        print('within elif')
+                        result = response.replace('validation error:', '')
+                    else:
+                        print('within else')
+                        result = "Please select the account from the list:" + json.loads(response)["account number"]    
+                    # return result
+                    break
+                    
+                elif i['tag']=='bankac_balance': 
+                    # current_context = i['context'][0]
+                    accno = re.findall(r'\d+', msg) 
+                    print("account number: " + str(accno))         
+                    # sio.emit(event_name,"Please wait this may take upto few minutes!!")        
+                    response = getbankbalance(str(accno))
+                    if response is None:
+                        result = "Oops! it seems there is some problem in the system, please try again later"
+                    elif "validation error" in response:
+                        print('within elif')
+                        result = response.replace('validation error:', '')                
+                    else:
+                        result = "Your account balance is $" + json.loads(response)["balance"]  
+                    # return result
+                    break               
+                    
+                else:              
+                    # current_context = i['context'][0]
+                    result = random.choice(i['responses'])
+                    # return result
+                    break
+    except Exception as e:
+        print('gui_chatbot:: getResponse Failed: '+ str(e))
+        result = "Oops! it seems there is some difficulties faced in the system, please try again later"
+    
     return result    
 
 # def socketemitmsg(event_name):

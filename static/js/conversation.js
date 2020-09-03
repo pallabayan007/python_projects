@@ -356,3 +356,7 @@ function displayTime() {
     }
     return str;
 }
+
+function clertext(){
+  document.getElementById("textInput").value = ""
+}

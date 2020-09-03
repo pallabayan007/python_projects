@@ -27,12 +27,12 @@
         {"tag": "account_balance",
                 "patterns": ["account balance plz","account balance please","Show me my account balance","How you could help me in account balance?"],
                 "responses": ["Please give me your customer id"],
-                "context": [""]
+                "context": ["cust_id"]
         },
         {"tag": "cust_id",
                 "patterns": ["my customer id is","id is","that would be "],
                 "responses": ["Please wait while I fetch the data, it may take upto few minutes!!!"],
-                "context": [""]
+                "context": ["bankac_balance"]
         },
         {"tag": "bankac_balance",
                 "patterns": ["my account is","that would be ","ac is"],

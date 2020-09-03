@@ -8,7 +8,7 @@ numpy==1.18.5
 configparser
 flask_socketio
 tensorflow==2.3.0
-dnspython==2.0.0
+dnspython==1.16.0
 gunicorn
 eventlet==0.26.1
 greenlet==0.4.16
