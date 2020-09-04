@@ -388,7 +388,7 @@ function closeForm() {
 
 
 $("#content")
-.html('<object data="http://52.255.201.244:5000/bank" width="350px" height="400px" style="overflow:auto;border:5px white"/>');
+.html('<object data="http://52.255.201.244:5000/general" width="350px" height="400px" style="overflow:auto;border:5px white"/>');
 	
 // $("#modalclose").onclick(location.reload());
 
@@ -448,5 +448,6 @@ window.onclick = function(event) {
 // ==================================================================================
 // ==================================================================================
   
+
 
 
