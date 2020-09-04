@@ -306,7 +306,16 @@ def getResponse(ints, intents_json, json_msg):
                 if i['tag']=='cust_id':
                     # current_context = i['context'][0]
                     print('msg is: ' + msg)
-                    customerid = re.findall(r'\d+', msg)
+                    customerid_from_msg = re.findall(r'\d+', msg)
+                    # print(''.join(customerid_from_msg))
+                    if (''.join(customerid_from_msg)).strip() == "":
+                        print('customerid_from_msg[0] is blank: ')
+                        msg_split = re.split('[ ,;:./\-+#]', msg)
+                        print(msg_split)
+                        print(len(msg_split))
+                        customerid = msg_split[len(msg_split)-1]
+                    else:
+                        customerid = customerid_from_msg[0]
                     print("customer id: " + str(customerid))
                     # if not socketemitmsg(event_name):
                     #     break      
@@ -334,7 +343,15 @@ def getResponse(ints, intents_json, json_msg):
                     
                 elif i['tag']=='bankac_balance': 
                     # current_context = i['context'][0]
-                    accno = re.findall(r'\d+', msg) 
+                    accno_from_msg = re.findall(r'\d+', msg)
+                    if (''.join(accno_from_msg)).strip() == "":
+                        print('accno_from_msg[0] is blank: ')
+                        msg_split = re.split('[ ,;:./\-+#]', msg)
+                        print(msg_split)
+                        print(len(msg_split))
+                        accno = msg_split[len(msg_split)-1]
+                    else:
+                        accno = accno_from_msg[0]
                     print("account number: " + str(accno))         
                     # sio.emit(event_name,"Please wait this may take upto few minutes!!")        
                     response = getbankbalance(str(accno))
@@ -387,9 +404,9 @@ def clear_expired_contexts(sockid):
 def getbankaccounts(customerid):
     # sock_reply = "Please wait while I fetch the data, it may take upto few minutes!!!"
     # sio.emit(event_name,sock_reply)
-    bad_chars = ['[', ']', "'", "'"]
-    for i in bad_chars : 
-        customerid = customerid.replace(i, '')
+    # bad_chars = ['[', ']', "'", "'"]
+    # for i in bad_chars : 
+    #     customerid = customerid.replace(i, '')
     print(customerid)
     print(data['ac_api'])
     resp = requests.get(data['ac_api'],
@@ -420,9 +437,9 @@ def getbankaccounts(customerid):
     
 
 def getbankbalance(accno):
-    bad_chars = ['[', ']', "'", "'"]
-    for i in bad_chars : 
-        accno = accno.replace(i, '')
+    # bad_chars = ['[', ']', "'", "'"]
+    # for i in bad_chars : 
+    #     accno = accno.replace(i, '')
     print(accno)
     resp = requests.get(data['balance_api'],
                             headers={'accno':accno})
