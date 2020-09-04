@@ -8,6 +8,7 @@ var Api = (function() {
   // Publicly accessible methods defined
   return {
     sendRequest: sendRequest,
+    clearsocketcontextfromserver: clearsocketcontextfromserver,
 
     // The request/response getters/setters are defined here to prevent internal methods
     // from calling the methods without any of the callbacks that are added elsewhere.
@@ -57,6 +58,11 @@ var Api = (function() {
     http.onreadystatechange = function() {
       if (http.readyState === 4 && http.status === 200 && http.responseText) {
         console.log("http.responseText: " + http.responseText);
+        console.log("http.responseText.output.tag: " + JSON.parse(http.responseText).output.tag.toLowerCase());
+        
+        if(JSON.parse(http.responseText).output.tag.toLowerCase() == "thanks"){
+          clearsocketcontextfromserver();
+        }
         Api.setResponsePayload(http.responseText);
       }
     };
@@ -72,6 +78,32 @@ var Api = (function() {
     // Send request
     http.send(params);
   }
+
+  
+ function clearsocketcontextfromserver(){
+   console.log("clearsocketcontextfromserver=====: " + socket.id)
+  url = '/api/clearsessions';
+  $.ajax({
+    type: 'post',
+    url: url,
+    processData: false,
+    contentType: 'application/json',
+    data: "{\"sockid\": \"" + socket.id + "\"}",			
+    success: function (response) {
+      console.log(response);		
+      if(response == "True"){
+        console.log("server context cleared successfully");
+      }else{
+        console.log("failed to clear server context");
+      }
+    },
+    error: function (err) {
+      console.log(err);
+    }
+  });
+}
+
+
 }());
 //var http = require('http');
 /*module.exports = {

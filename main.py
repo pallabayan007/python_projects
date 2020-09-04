@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from flask_socketio import SocketIO, emit, send
-from chatbot.gui_chatbot import send
+from chatbot.gui_chatbot import send, clear_expired_contexts
 from configparser import SafeConfigParser
 from admin import *
 from twilio.twiml.messaging_response import MessagingResponse
@@ -87,13 +87,21 @@ def chatcomm():
                 # result = getResponse(ints, intents, msg)
                 result = send(sio,request.json)
         except Exception as e:
-            print('train_chatbot:: /api/message Failed: '+ str(e))
+            print('chatcomm:: /api/message Failed: '+ str(e))
             result = "Oops! it seems there is some difficulties in the system, please try again later"   
         
-        res = '{"output":{"text":"' + result + '"}}'  
-        print('response to chat window: ' + res)  
-        reply = json.loads(res)
-        print(reply["output"])
+        try:
+            print(result)
+            result_text = result['response']
+            result_tag = result['tag']
+            res = '{"output":{"tag": "' + result_tag + '", "text":"' + result_text + '"}}'  
+            print('response to chat window: ' + res)
+            reply = json.loads(res)
+            print(reply["output"])
+            print(reply)
+        except Exception as e:
+            print('chatcomm:: /api/message Failed: '+ str(e))
+            # result = "Oops! it seems there is some difficultie(s) in the system, please try again later"
         
         return reply
     
@@ -127,9 +135,22 @@ def systemfileupload():
 # getting the client names
 @app.route("/api/getclients", methods=['GET', 'POST'])
 def getclients():    
+    print('====Inside getclients====')
     reply = gettrainingclients()
     # print('fileupload from main: ' + reply)
     return reply
+
+# Clearing the expired sessions
+@app.route("/api/clearsessions", methods=['GET', 'POST'])
+def clear_context_sessions():    
+    print('====Inside clear_context_sessions====')
+    print(request.data)
+    print(type(request.data))
+    request_json = (json.loads(request.data))
+    print(request_json)
+    print(request_json['sockid'])
+    reply = clear_expired_contexts(request_json['sockid'])
+    return str(reply)
 
 # =================================================================================
     # Definition of facebook social media functions

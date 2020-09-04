@@ -16,7 +16,7 @@ import requests
 import time
 import asyncio
 
-current_context = ""
+current_context = {}
 current_seq = ""
 current_tag = ""
 tag = ""
@@ -188,76 +188,76 @@ def predict_class(sentence):
 
 # It implements the context & sequencing
 # & returns the response to the chatbot
-def checkcontext(ints, intents_json, json_msg):
-    global current_context
-    global current_seq
-    global current_tag
-    global tag
-    global seq_err_occurred
-    seq_err_occurred = False
-    try:
-        # msg = json_msg["input"]["text"]
-        sockid = json_msg["input"]["socket_id"]
-        event_name = sockid+"_my_message"
-        print("event_name from checkcontext: " + event_name)
-        tag = ints[0]['intent']
-        list_of_intents = intents_json['intents']
-        for j in list_of_intents:
-            if(j['tag']== tag):
-                print("current_context: " + current_context)
-                print("current_seq: " + current_seq)
-                print("current_tag: " + current_tag)
-                print(j)
-                print(type(j))
-                print(j["context"])
-                print(j["sequence"])
-                print('j[tag]: ' + j['tag'] + ' :tag: ' + tag)
-                if current_context != None and current_context.strip() != "" and current_context == (j['context']).strip():
-                    print("Inside current context if: " + current_context)
-                    if current_seq != None and current_seq.strip() != "":
-                        print("Inside current seq if: " + current_seq)
-                        if int(j['sequence']) == (int(current_seq)+1):
-                            print("=====Inside current seq increment if:========== " + current_seq)
-                            # tag = ints[0]['intent']
-                            result = getResponse(ints, intents_json, json_msg)
-                            current_tag = tag
-                            current_context = j['context'].strip()
-                            current_seq = j['sequence'].strip()
-                            break
-                        else:
-                            print("=====Inside current seq increment else:========== " + current_seq)
-                            seq_err_occurred = True
-                            tag = current_tag
-                            # sio.emit(event_name,"Sorry, can't understand your input")
-                            result = getResponse(ints, intents_json, json_msg)
-                            break
-                    else:
-                        print("Inside current seq else: " + current_seq)
-                        tag = ints[0]['intent']
-                        result = getResponse(ints, intents_json, json_msg)
-                        current_tag = tag
-                        current_context = j['context'].strip()
-                        current_seq = j['sequence'].strip()
-                        break
-                else:
-                    print("Inside current context else: " + current_context)
-                    tag = ints[0]['intent']
-                    result = getResponse(ints, intents_json, json_msg)
-                    current_tag = tag
-                    current_context = j['context'].strip()
-                    current_seq = j['sequence'].strip()
-                    break        
-    except Exception as e:
-        print('gui_chatbot:: checkcontext Failed: '+ str(e))
-        result = "Oops! it seems there is some difficulties faced in the system, please try again later" 
+# def checkcontext(ints, intents_json, json_msg):
+#     global current_context
+#     global current_seq
+#     global current_tag
+#     global tag
+#     global seq_err_occurred
+#     seq_err_occurred = False
+#     try:
+#         # msg = json_msg["input"]["text"]
+#         sockid = json_msg["input"]["socket_id"]
+#         event_name = sockid+"_my_message"
+#         print("event_name from checkcontext: " + event_name)
+#         tag = ints[0]['intent']
+#         list_of_intents = intents_json['intents']
+#         for j in list_of_intents:
+#             if(j['tag']== tag):
+#                 print("current_context: " + current_context)
+#                 print("current_seq: " + current_seq)
+#                 print("current_tag: " + current_tag)
+#                 print(j)
+#                 print(type(j))
+#                 print(j["context"])
+#                 print(j["sequence"])
+#                 print('j[tag]: ' + j['tag'] + ' :tag: ' + tag)
+#                 if current_context != None and current_context.strip() != "" and current_context == (j['context']).strip():
+#                     print("Inside current context if: " + current_context)
+#                     if current_seq != None and current_seq.strip() != "":
+#                         print("Inside current seq if: " + current_seq)
+#                         if int(j['sequence']) == (int(current_seq)+1):
+#                             print("=====Inside current seq increment if:========== " + current_seq)
+#                             # tag = ints[0]['intent']
+#                             result = getResponse(ints, intents_json, json_msg)
+#                             current_tag = tag
+#                             current_context = j['context'].strip()
+#                             current_seq = j['sequence'].strip()
+#                             break
+#                         else:
+#                             print("=====Inside current seq increment else:========== " + current_seq)
+#                             seq_err_occurred = True
+#                             tag = current_tag
+#                             # sio.emit(event_name,"Sorry, can't understand your input")
+#                             result = getResponse(ints, intents_json, json_msg)
+#                             break
+#                     else:
+#                         print("Inside current seq else: " + current_seq)
+#                         tag = ints[0]['intent']
+#                         result = getResponse(ints, intents_json, json_msg)
+#                         current_tag = tag
+#                         current_context = j['context'].strip()
+#                         current_seq = j['sequence'].strip()
+#                         break
+#                 else:
+#                     print("Inside current context else: " + current_context)
+#                     tag = ints[0]['intent']
+#                     result = getResponse(ints, intents_json, json_msg)
+#                     current_tag = tag
+#                     current_context = j['context'].strip()
+#                     current_seq = j['sequence'].strip()
+#                     break        
+#     except Exception as e:
+#         print('gui_chatbot:: checkcontext Failed: '+ str(e))
+#         result = "Oops! it seems there is some difficulties faced in the system, please try again later" 
     
-    if seq_err_occurred:
-        # sio.emit(event_name,"Sorry, can't understand your input")
-        # return_socket_msg(event_name,"Sorry, can't understand your input")
-        seq_err_occurred = False
-        return ("Sorry, can't understand your input."+"\\n"+result)
-    else:
-        return result
+#     if seq_err_occurred:
+#         # sio.emit(event_name,"Sorry, can't understand your input")
+#         # return_socket_msg(event_name,"Sorry, can't understand your input")
+#         seq_err_occurred = False
+#         return ("Sorry, can't understand your input."+"\\n"+result)
+#     else:
+#         return result
 
 def return_socket_msg(event_name, msg):
     sio.emit(event_name,msg)
@@ -267,28 +267,42 @@ def getResponse(ints, intents_json, json_msg):
 
     try:
         global current_context
-        global seq_err_occurred
         seq_err_occurred = False
+        flow_func_err = False
         msg = json_msg["input"]["text"]
         sockid = json_msg["input"]["socket_id"]
         event_name = sockid+"_my_message"
+        if not sockid in current_context.keys() :
+            current_context[sockid] = ""
+        print(current_context)
         print("event_name from getResponse: " + event_name)
         print(ints)
         print(intents_json)
-        if current_context!= None and current_context.strip()!= "" and current_context!=ints[0]['intent']:
-            tag = "noanswer"
-            seq_err_occurred = True
+        print('Current context sock id=============')
+        print(current_context[sockid])
+        if current_context[sockid]!= None and current_context[sockid].strip()!= "" and current_context[sockid]!=ints[0]['intent']:
+            print("Inside current_context is not blank")
+            if ints[0]['intent'].lower() == "thanks":
+                tag = ints[0]['intent']
+                seq_err_occurred = False
+            else:
+                tag = "noanswer"
+                seq_err_occurred = True
+        # elif current_context!= None and current_context.strip()== "":
         else:
+            print("Inside current_context for else")
             tag = ints[0]['intent']
             seq_err_occurred = False
         # tag = ints[0]['intent']
         print("tag: " + tag)
         list_of_intents = intents_json['intents']
         for i in list_of_intents:
-            print(current_context)
+            # print(current_context[sockid])
             if(i['tag']== tag):
-                if not seq_err_occurred:
-                    current_context = i['context'][0]
+                # if not seq_err_occurred:
+                #     current_context[sockid] = i['context'][0]
+                # print('current_context after update: =====' + current_context[sockid])
+                # print(current_context)
                 if i['tag']=='cust_id':
                     # current_context = i['context'][0]
                     print('msg is: ' + msg)
@@ -306,9 +320,11 @@ def getResponse(ints, intents_json, json_msg):
                     # loop.run_until_complete(getbankaccounts(event_name,str(customerid)))
                     if response is None:
                         print('within if')
+                        flow_func_err = True
                         result = "Oops! it seems there is some problem in the system, please try again later"
                     elif "validation error" in response:
                         print('within elif')
+                        flow_func_err = True
                         result = response.replace('validation error:', '')
                     else:
                         print('within else')
@@ -323,9 +339,11 @@ def getResponse(ints, intents_json, json_msg):
                     # sio.emit(event_name,"Please wait this may take upto few minutes!!")        
                     response = getbankbalance(str(accno))
                     if response is None:
+                        flow_func_err = True
                         result = "Oops! it seems there is some problem in the system, please try again later"
                     elif "validation error" in response:
                         print('within elif')
+                        flow_func_err = True
                         result = response.replace('validation error:', '')                
                     else:
                         result = "Your account balance is $" + json.loads(response)["balance"]  
@@ -338,15 +356,33 @@ def getResponse(ints, intents_json, json_msg):
                     # return result
                     break
     except Exception as e:
+        flow_func_err = True
         print('gui_chatbot:: getResponse Failed: '+ str(e))
         result = "Oops! it seems there is some difficulties faced in the system, please try again later"
     
-    return result    
+    if not flow_func_err:
+        if not seq_err_occurred:
+            current_context[sockid] = i['context'][0]
+    else:
+        flow_func_err = False
+    print('current_context after update: =====' + current_context[sockid])
+    print(current_context)
 
-# def socketemitmsg(event_name):
-#     sio.emit(event_name,"Please wait this may take upto few minutes!!")
-#     time.sleep(2)
-#     return True
+    result_json = { 
+                    "tag": tag,                  
+                    "response": result
+                  }
+    # return result
+    return result_json
+
+# clearing the contexts with expired socket ids
+def clear_expired_contexts(sockid):
+    try:
+        del current_context[sockid]
+        return True
+    except Exception as e:
+        print('gui_chatbot:: clear_expired_contexts Failed: '+ str(e))  
+        return False
 
 def getbankaccounts(customerid):
     # sock_reply = "Please wait while I fetch the data, it may take upto few minutes!!!"
@@ -362,7 +398,7 @@ def getbankaccounts(customerid):
         # This means something went wrong.
         # raise ApiError('GET /tasks/ {}'.format(resp.status_code))
         print('error happened:' + str(resp.status_code) + ":" + resp.text)
-        if "Customer ID is less than 10 digits" in resp.text:
+        if "Incorrect Header" in resp.text:
             return "validation error:" + resp.text.replace('Incorrect Header.','') + ", please provide the correct id"
             # sock_reply = "Customer ID is less than 10 digits, please provide the correct id"
             # sio.emit(event_name,sock_reply)             
@@ -394,7 +430,7 @@ def getbankbalance(accno):
         # This means something went wrong.
         # raise ApiError('GET /tasks/ {}'.format(resp.status_code))
         print('error happened:' + str(resp.status_code) + ":" + resp.text)
-        if "Account number is less than 11 digits" in resp.text:
+        if "Incorrect Header" in resp.text:
             return "validation error:" + resp.text.replace('Incorrect Header.','') + ", please provide the correct id"
         else:
             return None      

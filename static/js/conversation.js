@@ -15,7 +15,7 @@ socket.on("connect", () => {
 
 });
 socket.on("disconnect", () => {
-  console.log("Lost connection to the server.");
+  console.log("Lost connection to the server.");  
 });
 
 function load_welcome(){
@@ -327,6 +327,7 @@ var ConversationPanel = (function() {
     // };
 	}
  }
+
   
 }());
 
