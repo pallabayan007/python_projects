@@ -203,17 +203,18 @@ def sendtofb(sender_id, text):
                     "input": {
                             "text": text,
                             "client": "general",
-                            "socket_id": ""
+                            "socket_id": sender_id
                         }
                     }
     
     msg = send(sio, sender_json)
+    reply_msg = msg['response']
     body = {"messaging_type": "RESPONSE",
             "recipient": {
                 "id": sender_id
             },
             "message": {
-                "text": msg
+                "text": reply_msg
             }}
 
     x = requests.post(url, json=body)
@@ -231,9 +232,12 @@ def sendtofb(sender_id, text):
 # =================================================================================
 @app.route("/api/wa", methods=['GET', 'POST'])
 def wachat():
+    print(request.values)
     incoming_msg = request.values.get('Body', '')
+    incoming_msg_id = request.values.get('AccountSid', '')
     print("====Inside whatsapp chat ===========")
     print(incoming_msg)
+    print(incoming_msg_id)
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
@@ -242,16 +246,18 @@ def wachat():
                     "input": {
                             "text": incoming_msg,
                             "client": "bank",
-                            "socket_id": ""
+                            "socket_id": incoming_msg_id
                         }
                     }
     print("sender_json: " + str(sender_json))
     try:
-        reply_msg = send(sio, sender_json)
+        reply_msg_return = send(sio, sender_json)
+        reply_msg = reply_msg_return['response']
     except Exception as e:
         print('train_chatbot:: /api/wa Failed: '+ str(e))
         reply_msg = "Oops! it seems there is some difficulties in the system, please try again later"
     
+    print("reply_msg: " + reply_msg)
     msg.body(reply_msg)
     responded=True
 
