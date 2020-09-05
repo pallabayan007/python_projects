@@ -194,6 +194,7 @@ def fbchat():
                 return "error", 503
     except Exception as e:
         print('fbchat:: /api/fb Failed: '+ str(e))
+        sendtofb(sender_id, "Thanks")
     
 
     
