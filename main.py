@@ -229,7 +229,7 @@ def sendtofb(sender_id, text):
         print("in func")
         print(x.text)
     except Exception as e:
-        print('fbchat:: /api/fb Failed: '+ str(e))
+        print('sendtofb:: /api/fb Failed: '+ str(e))
 
     
 
