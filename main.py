@@ -158,70 +158,80 @@ def clear_context_sessions():
 # =================================================================================
 @app.route("/api/fb", methods=['GET', 'POST'])
 def fbchat():
-    print("inside fbchat")
+    try:
+        print("inside fbchat")
+        if request.method == 'GET':
+            verify_token = "abcd"
 
-    if request.method == 'GET':
-        verify_token = "abcd"
+            mode = request.args['hub.mode']
+            token = request.args['hub.verify_token']
+            challenge = request.args['hub.challenge']
 
-        mode = request.args['hub.mode']
-        token = request.args['hub.verify_token']
-        challenge = request.args['hub.challenge']
+            print(mode, token, challenge)
 
-        print(mode, token, challenge)
-
-        if token == verify_token:
-            return challenge, 200
-        else:
-            return "Validation failed", 503
-
-    else:
-        body = request.json
-
-        print(body)
-        if body['object'] == "page":
-
-            for entry in body['entry']:
-                for message in entry['messaging']:
-                    sender_id = message['sender']['id']
-                    text = message['message']['text']
-                    print("in for")
-                    print(sender_id, text)
-                    sendtofb(sender_id, text)
-
-            return "success", 200
+            if token == verify_token:
+                return challenge, 200
+            else:
+                return "Validation failed", 503
 
         else:
-            return "error", 503
+            body = request.json
+
+            print(body)
+            if body['object'] == "page":
+
+                for entry in body['entry']:
+                    for message in entry['messaging']:
+                        sender_id = message['sender']['id']
+                        text = message['message']['text']
+                        print("in for")
+                        print(sender_id, text)
+                        sendtofb(sender_id, text)
+
+                return "success", 200
+
+            else:
+                return "error", 503
+    except Exception as e:
+        print('fbchat:: /api/fb Failed: '+ str(e))
+    
+
+    
 
 
 def sendtofb(sender_id, text):
 
-    access_token = "EAAUmPFiFbvMBAGbLJAyLzvF4F1LzKG4nw9ZBcO8LNJCGdoQqAHAM0uGTpJZBCU11KaHG8f9lofZAz1exb9wFoEhZBAAh97kIVya30ZAwL7Taq3OChRFoXPpsZBbaQmI7dIVvZArTkcfVj8s3y9LaZC2XkYSVsnlHQdBQSLRPPnZCBx2OUZAIzSIbDc"
-    url = "https://graph.facebook.com/v8.0/me/messages?access_token=" + access_token
-    
-    
-    sender_json = {
-                    "input": {
-                            "text": text,
-                            "client": "bank",
-                            "socket_id": sender_id
+    try:
+        access_token = "EAAUmPFiFbvMBAGbLJAyLzvF4F1LzKG4nw9ZBcO8LNJCGdoQqAHAM0uGTpJZBCU11KaHG8f9lofZAz1exb9wFoEhZBAAh97kIVya30ZAwL7Taq3OChRFoXPpsZBbaQmI7dIVvZArTkcfVj8s3y9LaZC2XkYSVsnlHQdBQSLRPPnZCBx2OUZAIzSIbDc"
+        url = "https://graph.facebook.com/v8.0/me/messages?access_token=" + access_token
+        
+        
+        sender_json = {
+                        "input": {
+                                "text": text,
+                                "client": "bank",
+                                "socket_id": sender_id
+                            }
                         }
-                    }
+        
+        msg = send(sio, sender_json)
+        reply_msg = msg['response']
+        body = {"messaging_type": "RESPONSE",
+                "recipient": {
+                    "id": sender_id
+                },
+                "message": {
+                    "text": reply_msg
+                }}
+
+        x = requests.post(url, json=body)
+
+        print("in func")
+        print(x.text)
+    except Exception as e:
+        print('fbchat:: /api/fb Failed: '+ str(e))
+
     
-    msg = send(sio, sender_json)
-    reply_msg = msg['response']
-    body = {"messaging_type": "RESPONSE",
-            "recipient": {
-                "id": sender_id
-            },
-            "message": {
-                "text": reply_msg
-            }}
-
-    x = requests.post(url, json=body)
-
-    print("in func")
-    print(x.text)
 
 # =================================================================================
     # Definition of facebook social media functions
