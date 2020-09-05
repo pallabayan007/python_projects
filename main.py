@@ -7,6 +7,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 import socketio, json
 import socket
 import requests
+import re
 
 HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
 PORT = 5000        # Port to listen on (non-privileged ports are > 1023)
@@ -202,7 +203,7 @@ def sendtofb(sender_id, text):
     sender_json = {
                     "input": {
                             "text": text,
-                            "client": "general",
+                            "client": "bank",
                             "socket_id": sender_id
                         }
                     }
@@ -235,9 +236,16 @@ def wachat():
     print(request.values)
     incoming_msg = request.values.get('Body', '')
     incoming_msg_id = request.values.get('AccountSid', '')
+    incoming_ph_no_extract = request.values.get('From', '')
+    incoming_ph_no_digit = re.findall(r'\d+', incoming_ph_no_extract)
+    incoming_ph_no = (''.join(incoming_ph_no_digit)).strip()
     print("====Inside whatsapp chat ===========")
-    print(incoming_msg)
+    print(incoming_msg)    
     print(incoming_msg_id)
+    print(incoming_ph_no_extract)
+    print(incoming_ph_no)
+    print((''.join(incoming_ph_no)).strip())
+
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
@@ -246,7 +254,7 @@ def wachat():
                     "input": {
                             "text": incoming_msg,
                             "client": "bank",
-                            "socket_id": incoming_msg_id
+                            "socket_id": incoming_ph_no
                         }
                     }
     print("sender_json: " + str(sender_json))
