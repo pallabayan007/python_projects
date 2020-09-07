@@ -1,0 +1,11 @@
+Django
+djangorestframework
+numpy==1.18.5
+sklearn
+pandas
+tensorflow
+pymongo
+azure.cosmos
+dnspython
+matplotlib
+gunicorn

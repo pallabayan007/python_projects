@@ -1,0 +1,76 @@
+{% extends "layout_training.html" %}
+
+    {% block content %}
+
+    <div class="main-container">
+        <div class="cloud-image">
+            <img src="../../static/images/successCloudNew.svg" />
+        </div>
+        <div class="content">
+            <div class="content-body">
+                <div class="success-text">Success!</div>
+                <div class="description line-1">Landing Portal for Model Training</div>
+                <div class="description line-2">This page is used for training and creating models</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4" id="uploadtraining">
+            <h2>Upload your training data</h2>
+            <p>Please upload your training input and output files</p>
+            <input type="file" id="trainingfiles" multiple size="50" onchange="selecttrainingfiles()">
+            <p id="trainingfilemessage"></p>
+            <p><strong>Tip:</strong> Use the Control or the Shift key to select multiple files.</p>
+            <p>
+                <a class="btn btn-default" id="process-training-file-button" onclick="uploadfile('trainingfiles', 'traininguploadprogress', 'traininguploadbar', 'ico_upldtrainingcompleted', 'ico_upldtrainingfailed')">Upload &raquo;</a>
+                <div class="progress" id="traininguploadprogress" hidden>
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%" id="traininguploadbar">
+                        Uploading
+                    </div>
+                </div>
+                <img src="../../static/images/doc_success_commit.png" id="ico_upldtrainingcompleted" hidden/>
+                <img src="../../static/images/doc_failure_icon.png" id="ico_upldtrainingfailed" hidden/>
+            </p>
+        </div>
+        <div class="col-md-4" id="trainingdiv">
+            <h2>Get your training done right away</h2>
+            <p>Start training by clicking the button</p>
+            <p>
+                <label for="client-dropdown">Choose a Client:</label>
+                <select id="client-dropdown" name="clients"></select>
+            </p>
+            <p><a class="btn btn-default" id="runtraining" onclick="getTraining('trainingprogress', 'trainingbar')">Train &raquo;</a></p>
+            <div class="progress" id="trainingprogress" hidden>
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%" id="trainingbar">
+                    Training
+                </div>
+            </div>
+            <p id="trainingmessage"></p>
+        </div>
+        <div class="col-md-4" id="uploadconfig">
+            <h2>Upload your data config</h2>
+            <p>Please upload the config file for data</p>
+            <input type="file" id="configfile" multiple size="50" onchange="selectconfigfile()">
+            <p id="configfilemessage"></p>
+            <p><strong>Tip:</strong> Use the Control or the Shift key to select multiple files.</p>
+            <p>
+                <a class="btn btn-default" id="process-config-file-button" onclick="uploadfile('configfile', 'configuploadprogress', 'configuploadbar', 'ico_upldtrainingcompleted1', 'ico_upldtrainingfailed1')">Upload &raquo;</a>
+                <div class="progress" id="configuploadprogress" hidden>
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%" id="configuploadbar">
+                        Uploading
+                    </div>
+                </div>
+                <img src="../../static/images/doc_success_commit.png" id="ico_upldtrainingcompleted1" hidden/>
+                <img src="../../static/images/doc_failure_icon.png" id="ico_upldtrainingfailed1" hidden/>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var clients = {{ clients|safe }}
+    </script>
+
+    {% endblock %}
+      
+

@@ -1,0 +1,27 @@
+{% extends "layout_graphs.html" %}
+
+    {% block content %}
+
+    <div class="main-container">
+        <div class="cloud-image">
+            <img src="../../static/images/successCloudNew.svg" />
+        </div>
+        <div class="content">
+            <div class="content-body">
+                <div class="success-text">{{ client }}</div>
+                <div class="description line-1">View prediction analysis graphs below</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">        
+        <div id="graphs" class="col-md-4"></div>
+    </div>
+
+    <script>
+        var data = {{ uri|safe }}
+    </script>
+
+    {% endblock %}
+      
+

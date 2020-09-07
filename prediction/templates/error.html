@@ -1,0 +1,23 @@
+{% extends "layout_graphs.html" %}
+
+    {% block content %}
+
+    <div class="main-container">
+        <div class="cloud-image">
+            <img src="../../static/images/successCloudNew.svg" />
+        </div>
+        <div class="content">
+            <div class="content-body">
+                <div class="success-text">Oops!</div>
+                <div class="description line-1">Encountered an error during prediction. Please try again.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="graphs" class="col-md-4"></div>
+    </div>
+
+    {% endblock %}
+
+
