@@ -57,7 +57,7 @@ def getModelDetails(client):
 
     optimizer = getOptimizer(client_details)
 
-    return client_details[0]['activation'], client_details[0]['dropout'], client_details[0]['dense'], client_details[0]['layers'], optimizer, client_details[0]['loss'], client_details[0]['epoch']
+    return client_details[0]['activation'], int(client_details[0]['dropout']), int(client_details[0]['dense']), int(client_details[0]['layers']), optimizer, client_details[0]['loss'], int(client_details[0]['epoch'])
 
 
 def getOptimizer(client_details):
