@@ -343,7 +343,7 @@ def getResponse(ints, intents_json, json_msg):
                     
                 elif i['tag']=='bankac_balance': 
                     # current_context = i['context'][0]
-                    accno_from_msg = re.findall(r'\d+', msg)
+                    accno_from_msg = re.findall(r'\d+', msg.replace(" ",""))
                     if (''.join(accno_from_msg)).strip() == "":
                         print('accno_from_msg[0] is blank: ')
                         msg_split = re.split('[ ,;:./\-+#]', msg)
