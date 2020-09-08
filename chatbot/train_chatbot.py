@@ -142,17 +142,17 @@ def exectraining():
         global parser
         parser = SafeConfigParser()
         parser.read('chatbot/training.ini')
-
+        print('====before word categorization====')
         words=[]
         classes = []
         documents = []
         ignore_letters = ['!', '?', ',', '.']
-
+        print('==== before reading values from files====')
         # Reading the values for the client details to train
         intent_file_client = parser.get('chat_trainer', 'client')
         intent_file_name = parser.get(intent_file_client, 'intents')
         # intents_file = open('intents.json').read()
-        intents_file = open(intent_file_name).read()        
+        intents_file = open(intent_file_name, encoding="mbcs").read()        
         print("====before loading the intent file=====")
         intents = json.loads(intents_file)
         print("====after loading the intent file=====")

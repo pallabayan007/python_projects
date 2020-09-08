@@ -32,8 +32,9 @@
         <label for="textInput" class="inputOutline">		
           <input id="textInput" class="input responsive-column"
             placeholder="Type something" type="text"
-            onkeydown="ConversationPanel.inputKeyDown(event, this), ConversationPanel.instantiateEventHanders(event)">
+            onkeydown="ConversationPanel.inputKeyDown(event, this), ConversationPanel.instantiateEventHanders(event)">          
         </label>
+        {#<img src="static/images/speech_button.png" id="speech_button" onclick="Voice.startvoice()">#}
       </div>
     </div>
   </div>
@@ -47,6 +48,7 @@
   <script src="static/js/conversation.js"></script>
   <script src="static/js/payload.js"></script>
   <script src="static/js/global.js"></script>
+  <script src="static/js/voice.js"></script>
   
 </body>
 </html>

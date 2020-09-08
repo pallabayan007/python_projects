@@ -97,7 +97,7 @@ def load_configs(client):
     
     # =================================================================================
     try:
-        intents = json.loads(open(intent_file_name).read())
+        intents = json.loads(open(intent_file_name, encoding="mbcs").read())
         words = pickle.load(open(word_name,'rb'))
         classes = pickle.load(open(class_name,'rb'))
         model = load_model(model_name)

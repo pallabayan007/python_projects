@@ -1,0 +1,3658 @@
+[
+  {
+    "insertId": "6o4fsag302ipot",
+    "jsonPayload": {
+      "waitingForUserInput": {},
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Happy to help!",
+              "text": "Happy to help!"
+            }
+          }
+        ]
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:17:03.002Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:17:03.002Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:17:03.096195044Z"
+  },
+  {
+    "insertId": "6o4fsag302ipos",
+    "jsonPayload": {
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Happy to help!\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "timestamp": "2020-09-08T15:17:03Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:17:03Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:17:03.096195044Z"
+  },
+  {
+    "insertId": "6o4fsag302ipor",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"thank you\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:16:34Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "timestamp": "2020-09-08T15:17:03Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:17:03Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:17:03.096195044Z"
+  },
+  {
+    "insertId": "6o4fsag302ipoq",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T15:17:03Z",
+      "intentMatch": {
+        "functionName": "customeventhandler",
+        "intentId": "custom_intent"
+      },
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Happy to help!",
+              "text": "Happy to help!"
+            }
+          }
+        ],
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:17:03Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:17:03.096195044Z"
+  },
+  {
+    "insertId": "6o4fsag302ipop",
+    "jsonPayload": {
+      "userInput": {
+        "originalQuery": "thank you"
+      },
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:17:01.277Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:17:01.277Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:17:03.096195044Z"
+  },
+  {
+    "insertId": "19ihwkkg2516vmd",
+    "jsonPayload": {
+      "executionState": {
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Your account balance is $245500.00",
+              "speech": "Your account balance is $245500.00"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent"
+      },
+      "waitingForUserInput": {},
+      "timestamp": "2020-09-08T15:16:48.497Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:48.497Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:48.578870984Z"
+  },
+  {
+    "insertId": "19ihwkkg2516vmc",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:16:48.496Z",
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Your account balance is $245500.00\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\", \n    \"params\": {}\n  }\n}\n"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:16:48.496Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:48.578870984Z"
+  },
+  {
+    "insertId": "19ihwkkg2516vmb",
+    "jsonPayload": {
+      "status": {},
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"account is 12345678901\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:16:20Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "timestamp": "2020-09-08T15:16:48.496Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:16:48.496Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:48.578870984Z"
+  },
+  {
+    "insertId": "19ihwkkg2516vma",
+    "jsonPayload": {
+      "status": {},
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Your account balance is $245500.00",
+              "speech": "Your account balance is $245500.00"
+            }
+          }
+        ],
+        "sessionParameters": {}
+      },
+      "timestamp": "2020-09-08T15:16:48.496Z",
+      "intentMatch": {
+        "intentId": "custom_intent",
+        "functionName": "customeventhandler"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:48.496Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:48.578870984Z"
+  },
+  {
+    "insertId": "19ihwkkg2516vm9",
+    "jsonPayload": {
+      "userInput": {
+        "originalQuery": "account is 12345678901"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:16:46.481Z",
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:46.481Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:48.578870984Z"
+  },
+  {
+    "insertId": "1xxcvkwg40czz79",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:16:34.543Z",
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Not sure I understand",
+              "speech": "Not sure I understand"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      },
+      "waitingForUserInput": {},
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:34.543Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:34.645209327Z"
+  },
+  {
+    "insertId": "1xxcvkwg40czz78",
+    "jsonPayload": {
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Not sure I understand\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "timestamp": "2020-09-08T15:16:34.541Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:16:34.541Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:34.645209327Z"
+  },
+  {
+    "insertId": "1xxcvkwg40czz77",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"account Id is 12345678901\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:16:03Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:16:34.541Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:34.541Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:34.645209327Z"
+  },
+  {
+    "insertId": "1xxcvkwg40czz76",
+    "jsonPayload": {
+      "intentMatch": {
+        "functionName": "customeventhandler",
+        "intentId": "custom_intent"
+      },
+      "status": {},
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Not sure I understand",
+              "speech": "Not sure I understand"
+            }
+          }
+        ],
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:16:34.541Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:34.541Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:34.645209327Z"
+  },
+  {
+    "insertId": "1xxcvkwg40czz75",
+    "jsonPayload": {
+      "userInput": {
+        "originalQuery": "account Id is 12345678901"
+      },
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      },
+      "timestamp": "2020-09-08T15:16:32.700Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:16:32.700Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:34.645209327Z"
+  },
+  {
+    "insertId": "yoyqzog3tcrhwg",
+    "jsonPayload": {
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Not sure I understand",
+              "speech": "Not sure I understand"
+            }
+          }
+        ],
+        "sessionParameters": {}
+      },
+      "status": {},
+      "waitingForUserInput": {},
+      "timestamp": "2020-09-08T15:16:19.961Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:16:19.961Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:20.055074209Z"
+  },
+  {
+    "insertId": "yoyqzog3tcrhwf",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:16:19.959Z",
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Not sure I understand\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:19.959Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:20.055074209Z"
+  },
+  {
+    "insertId": "yoyqzog3tcrhwe",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:16:19.959Z",
+      "status": {},
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"account Id is 361220 56382\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:15:27Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:16:19.959Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:20.055074209Z"
+  },
+  {
+    "insertId": "yoyqzog3tcrhwd",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T15:16:19.959Z",
+      "intentMatch": {
+        "intentId": "custom_intent",
+        "functionName": "customeventhandler"
+      },
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Not sure I understand",
+              "text": "Not sure I understand"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:19.959Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:20.055074209Z"
+  },
+  {
+    "insertId": "yoyqzog3tcrhwc",
+    "jsonPayload": {
+      "status": {},
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:16:18.168Z",
+      "userInput": {
+        "originalQuery": "account Id is 361220 56382"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:16:18.168Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:20.055074209Z"
+  },
+  {
+    "insertId": "b3kt88en76na",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T15:16:02.834Z",
+      "waitingForUserInput": {},
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Please give me more info",
+              "speech": "Please give me more info"
+            }
+          }
+        ]
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:02.834Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:02.917305255Z"
+  },
+  {
+    "insertId": "b3kt88en76n9",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:16:02.833Z",
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Please give me more info\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\", \n    \"params\": {}\n  }\n}\n"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:02.833Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:02.917305255Z"
+  },
+  {
+    "insertId": "b3kt88en76n8",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:16:02.833Z",
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"account ID 361280 56382\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:15:06Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:16:02.833Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:02.917305255Z"
+  },
+  {
+    "insertId": "b3kt88en76n7",
+    "jsonPayload": {
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Please give me more info",
+              "speech": "Please give me more info"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      },
+      "timestamp": "2020-09-08T15:16:02.833Z",
+      "intentMatch": {
+        "functionName": "customeventhandler",
+        "intentId": "custom_intent"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:16:02.833Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:02.917305255Z"
+  },
+  {
+    "insertId": "b3kt88en76n6",
+    "jsonPayload": {
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      },
+      "timestamp": "2020-09-08T15:16:00.609Z",
+      "userInput": {
+        "originalQuery": "account ID 361280 56382"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:16:00.609Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:16:02.917305255Z"
+  },
+  {
+    "insertId": "19ihwkkg25083vw",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:15:27.298Z",
+      "waitingForUserInput": {},
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Please select the account from the list:36128056382",
+              "text": "Please select the account from the list:36128056382"
+            }
+          }
+        ]
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:15:27.298Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:27.388286792Z"
+  },
+  {
+    "insertId": "19ihwkkg25083vv",
+    "jsonPayload": {
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Please select the account from the list:36128056382\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "timestamp": "2020-09-08T15:15:27.297Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:15:27.297Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:27.388286792Z"
+  },
+  {
+    "insertId": "19ihwkkg25083vu",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:15:27.297Z",
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"customer ID 1234567890\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:14:51Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:15:27.297Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:27.388286792Z"
+  },
+  {
+    "insertId": "19ihwkkg25083vt",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:15:27.297Z",
+      "intentMatch": {
+        "intentId": "custom_intent",
+        "functionName": "customeventhandler"
+      },
+      "status": {},
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Please select the account from the list:36128056382",
+              "speech": "Please select the account from the list:36128056382"
+            }
+          }
+        ],
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:15:27.297Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:27.388286792Z"
+  },
+  {
+    "insertId": "19ihwkkg25083vs",
+    "jsonPayload": {
+      "userInput": {
+        "originalQuery": "customer ID 1234567890"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:15:25.379Z",
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:15:25.379Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:27.388286792Z"
+  },
+  {
+    "insertId": "c7j8t4fai97pw",
+    "jsonPayload": {
+      "waitingForUserInput": {},
+      "timestamp": "2020-09-08T15:15:06.063Z",
+      "status": {},
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Please give me your customer id",
+              "speech": "Please give me your customer id"
+            }
+          }
+        ]
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:15:06.063Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:06.163170539Z"
+  },
+  {
+    "insertId": "c7j8t4fai97pv",
+    "jsonPayload": {
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Please give me your customer id\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:15:06.062Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:15:06.062Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:06.163170539Z"
+  },
+  {
+    "insertId": "c7j8t4fai97pu",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"account balance please\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:14:35Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:15:06.062Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:15:06.062Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:06.163170539Z"
+  },
+  {
+    "insertId": "c7j8t4fai97pt",
+    "jsonPayload": {
+      "executionState": {
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Please give me your customer id",
+              "speech": "Please give me your customer id"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:15:06.062Z",
+      "intentMatch": {
+        "intentId": "custom_intent",
+        "functionName": "customeventhandler"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:15:06.062Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:06.163170539Z"
+  },
+  {
+    "insertId": "c7j8t4fai97ps",
+    "jsonPayload": {
+      "userInput": {
+        "originalQuery": "account balance please"
+      },
+      "timestamp": "2020-09-08T15:15:04.571Z",
+      "status": {},
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:15:04.571Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:15:06.163170539Z"
+  },
+  {
+    "insertId": "1h038hgg67msnqc",
+    "jsonPayload": {
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "I can guide you through checking your account balance, getting your last 10 txn details, checking your account info",
+              "text": "I can guide you through checking your account balance, getting your last 10 txn details, checking your account info"
+            }
+          }
+        ],
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:14:51.584Z",
+      "waitingForUserInput": {},
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:14:51.584Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:51.676583732Z"
+  },
+  {
+    "insertId": "1h038hgg67msnqb",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:14:51.583Z",
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"I can guide you through checking your account balance, getting your last 10 txn details, checking your account info\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\", \n    \"params\": {}\n  }\n}\n"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:14:51.583Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:51.676583732Z"
+  },
+  {
+    "insertId": "1h038hgg67msnqa",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"need help\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:10:49Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:14:51.583Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:14:51.583Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:51.676583732Z"
+  },
+  {
+    "insertId": "1h038hgg67msnq9",
+    "jsonPayload": {
+      "status": {},
+      "intentMatch": {
+        "functionName": "customeventhandler",
+        "intentId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:14:51.583Z",
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "I can guide you through checking your account balance, getting your last 10 txn details, checking your account info",
+              "speech": "I can guide you through checking your account balance, getting your last 10 txn details, checking your account info"
+            }
+          }
+        ],
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:14:51.583Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:51.676583732Z"
+  },
+  {
+    "insertId": "1h038hgg67msnq8",
+    "jsonPayload": {
+      "status": {},
+      "userInput": {
+        "originalQuery": "need help"
+      },
+      "timestamp": "2020-09-08T15:14:49.725Z",
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:14:49.725Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:51.676583732Z"
+  },
+  {
+    "insertId": "1wjfantf8wkd3u",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:14:34.943Z",
+      "status": {},
+      "executionState": {
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Hi there, how can I help?",
+              "text": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent"
+      },
+      "waitingForUserInput": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:14:34.943Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:35.037828910Z"
+  },
+  {
+    "insertId": "1wjfantf8wkd3t",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T15:14:34.942Z",
+      "onSceneEnter": {},
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Hi there, how can I help?",
+              "text": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:14:34.942Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:35.037828910Z"
+  },
+  {
+    "insertId": "1wjfantf8wkd3s",
+    "jsonPayload": {
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Hi there, how can I help?\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "timestamp": "2020-09-08T15:14:34.942Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:14:34.942Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:35.037828910Z"
+  },
+  {
+    "insertId": "1wjfantf8wkd3r",
+    "jsonPayload": {
+      "status": {},
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"limachatconn\"},\"intent\":{\"name\":\"actions.intent.MAIN\",\"params\":{},\"query\":\"Talk to Lima Chat\"},\"scene\":{\"name\":\"actions.scene.START_CONVERSATION\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{},\"next\":{\"name\":\"custom_intent\"}},\"session\":{\"id\":\"ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:10:49Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "timestamp": "2020-09-08T15:14:34.942Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:14:34.942Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:35.037828910Z"
+  },
+  {
+    "insertId": "1wjfantf8wkd3q",
+    "jsonPayload": {
+      "executionState": {
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Hi there, how can I help?",
+              "text": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "currentSceneId": "actions.scene.START_CONVERSATION"
+      },
+      "intentMatch": {
+        "intentId": "actions.intent.MAIN",
+        "nextSceneId": "custom_intent",
+        "functionName": "limachatconn"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:14:34.942Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:14:34.942Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:35.037828910Z"
+  },
+  {
+    "insertId": "1wjfantf8wkd3p",
+    "jsonPayload": {
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "actions.scene.START_CONVERSATION"
+      },
+      "status": {},
+      "userInput": {},
+      "timestamp": "2020-09-08T15:14:29.985Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:14:29.985Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF1O8nfnGChJrQuiRYvZBbd37XESHwYdJjRp-sG3wleJfJlEmrqS6b6d8ofj8tZEVNGCPFLJdM",
+    "receiveTimestamp": "2020-09-08T15:14:35.037828910Z"
+  },
+  {
+    "insertId": "1sndwn5f95mn4p",
+    "jsonPayload": {
+      "waitingForUserInput": {},
+      "timestamp": "2020-09-08T15:10:49.034Z",
+      "status": {},
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Any time!",
+              "speech": "Any time!"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:49.034Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:49.128103941Z"
+  },
+  {
+    "insertId": "1sndwn5f95mn4o",
+    "jsonPayload": {
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Any time!\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:10:49.033Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:49.033Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:49.128103941Z"
+  },
+  {
+    "insertId": "1sndwn5f95mn4n",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:10:49.033Z",
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"thank you\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:10:17Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:49.033Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:49.128103941Z"
+  },
+  {
+    "insertId": "1sndwn5f95mn4m",
+    "jsonPayload": {
+      "intentMatch": {
+        "intentId": "custom_intent",
+        "functionName": "customeventhandler"
+      },
+      "timestamp": "2020-09-08T15:10:49.033Z",
+      "status": {},
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent",
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Any time!",
+              "text": "Any time!"
+            }
+          }
+        ]
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:10:49.033Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:49.128103941Z"
+  },
+  {
+    "insertId": "1sndwn5f95mn4l",
+    "jsonPayload": {
+      "status": {},
+      "userInput": {
+        "originalQuery": "thank you"
+      },
+      "timestamp": "2020-09-08T15:10:47.051Z",
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:47.051Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:49.128103941Z"
+  },
+  {
+    "insertId": "1lzo5jpg23dppee",
+    "jsonPayload": {
+      "waitingForUserInput": {},
+      "status": {},
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "text": " Customer ID is less than 10 digits, please provide the correct id",
+              "speech": " Customer ID is less than 10 digits, please provide the correct id"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      },
+      "timestamp": "2020-09-08T15:10:33.546Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:10:33.546Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:33.634727311Z"
+  },
+  {
+    "insertId": "1lzo5jpg23dpped",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:10:33.544Z",
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \" Customer ID is less than 10 digits, please provide the correct id\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:33.544Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:33.634727311Z"
+  },
+  {
+    "insertId": "1lzo5jpg23dppec",
+    "jsonPayload": {
+      "status": {},
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"ID is 12\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:09:59Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "timestamp": "2020-09-08T15:10:33.544Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:33.544Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:33.634727311Z"
+  },
+  {
+    "insertId": "1lzo5jpg23dppeb",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T15:10:33.544Z",
+      "intentMatch": {
+        "intentId": "custom_intent",
+        "functionName": "customeventhandler"
+      },
+      "executionState": {
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "text": " Customer ID is less than 10 digits, please provide the correct id",
+              "speech": " Customer ID is less than 10 digits, please provide the correct id"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:33.544Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:33.634727311Z"
+  },
+  {
+    "insertId": "1lzo5jpg23dppea",
+    "jsonPayload": {
+      "userInput": {
+        "originalQuery": "ID is 12"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:10:31.229Z",
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:31.229Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:33.634727311Z"
+  },
+  {
+    "insertId": "17kgky9g2vtgczp",
+    "jsonPayload": {
+      "status": {},
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Not sure I understand",
+              "text": "Not sure I understand"
+            }
+          }
+        ],
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:10:17.492Z",
+      "waitingForUserInput": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:17.492Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:17.579332148Z"
+  },
+  {
+    "insertId": "17kgky9g2vtgczo",
+    "jsonPayload": {
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Not sure I understand\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "timestamp": "2020-09-08T15:10:17.490Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:17.490Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:17.579332148Z"
+  },
+  {
+    "insertId": "17kgky9g2vtgczn",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:10:17.490Z",
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"nomatchhandler\"},\"intent\":{\"name\":\"actions.intent.NO_MATCH_1\",\"params\":{},\"query\":\"it is 12\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:09:43Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:17.490Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:17.579332148Z"
+  },
+  {
+    "insertId": "17kgky9g2vtgczm",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:10:17.490Z",
+      "status": {},
+      "intentMatch": {
+        "intentId": "actions.intent.NO_MATCH_1",
+        "functionName": "nomatchhandler"
+      },
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent",
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Not sure I understand",
+              "speech": "Not sure I understand"
+            }
+          }
+        ]
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:10:17.490Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:17.579332148Z"
+  },
+  {
+    "insertId": "17kgky9g2vtgczl",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T15:10:15.128Z",
+      "userInput": {
+        "originalQuery": "it is 12"
+      },
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:10:15.128Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:10:17.579332148Z"
+  },
+  {
+    "insertId": "152htsxfr9rlms",
+    "jsonPayload": {
+      "status": {},
+      "waitingForUserInput": {},
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Please give me your customer id",
+              "text": "Please give me your customer id"
+            }
+          }
+        ],
+        "sessionParameters": {}
+      },
+      "timestamp": "2020-09-08T15:09:58.821Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:58.821Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:58.915315734Z"
+  },
+  {
+    "insertId": "152htsxfr9rlmr",
+    "jsonPayload": {
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Please give me your customer id\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "timestamp": "2020-09-08T15:09:58.819Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:09:58.819Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:58.915315734Z"
+  },
+  {
+    "insertId": "152htsxfr9rlmq",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:09:58.819Z",
+      "status": {},
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"account balance please\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:09:32Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:58.819Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:58.915315734Z"
+  },
+  {
+    "insertId": "152htsxfr9rlmp",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:09:58.819Z",
+      "intentMatch": {
+        "functionName": "customeventhandler",
+        "intentId": "custom_intent"
+      },
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Please give me your customer id",
+              "text": "Please give me your customer id"
+            }
+          }
+        ]
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:58.819Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:58.915315734Z"
+  },
+  {
+    "insertId": "152htsxfr9rlmo",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:09:56.844Z",
+      "userInput": {
+        "originalQuery": "account balance please"
+      },
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:56.844Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:58.915315734Z"
+  },
+  {
+    "insertId": "xkyqffg4ff3g77",
+    "jsonPayload": {
+      "waitingForUserInput": {},
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "I can guide you through checking your account balance, getting your last 10 txn details, checking your account info",
+              "text": "I can guide you through checking your account balance, getting your last 10 txn details, checking your account info"
+            }
+          }
+        ],
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:09:42.832Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:42.832Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:42.928277338Z"
+  },
+  {
+    "insertId": "xkyqffg4ff3g76",
+    "jsonPayload": {
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"I can guide you through checking your account balance, getting your last 10 txn details, checking your account info\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "timestamp": "2020-09-08T15:09:42.831Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:09:42.831Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:42.928277338Z"
+  },
+  {
+    "insertId": "xkyqffg4ff3g75",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:09:42.831Z",
+      "status": {},
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"customeventhandler\"},\"intent\":{\"name\":\"custom_intent\",\"params\":{},\"query\":\"need help\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:09:17Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:42.831Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:42.928277338Z"
+  },
+  {
+    "insertId": "xkyqffg4ff3g74",
+    "jsonPayload": {
+      "executionState": {
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "I can guide you through checking your account balance, getting your last 10 txn details, checking your account info",
+              "speech": "I can guide you through checking your account balance, getting your last 10 txn details, checking your account info"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent"
+      },
+      "intentMatch": {
+        "functionName": "customeventhandler",
+        "intentId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:09:42.831Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:09:42.831Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:42.928277338Z"
+  },
+  {
+    "insertId": "xkyqffg4ff3g73",
+    "jsonPayload": {
+      "userInput": {
+        "originalQuery": "need help"
+      },
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:09:40.761Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:09:40.761Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:42.928277338Z"
+  },
+  {
+    "insertId": "15wm9wag47in6wf",
+    "jsonPayload": {
+      "status": {},
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Hi there, how can I help?",
+              "speech": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "waitingForUserInput": {},
+      "timestamp": "2020-09-08T15:09:32.082Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:32.082Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:32.171291217Z"
+  },
+  {
+    "insertId": "15wm9wag47in6we",
+    "jsonPayload": {
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Hi there, how can I help?\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "timestamp": "2020-09-08T15:09:32.081Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:32.081Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:32.171291217Z"
+  },
+  {
+    "insertId": "15wm9wag47in6wd",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T15:09:32.081Z",
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"nomatchhandler\"},\"intent\":{\"name\":\"actions.intent.NO_MATCH_1\",\"params\":{},\"query\":\"middle\"},\"scene\":{\"name\":\"custom_intent\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{}},\"session\":{\"id\":\"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:05:46Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:32.081Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:32.171291217Z"
+  },
+  {
+    "insertId": "15wm9wag47in6wc",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:09:32.081Z",
+      "intentMatch": {
+        "intentId": "actions.intent.NO_MATCH_1",
+        "functionName": "nomatchhandler"
+      },
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent",
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Hi there, how can I help?",
+              "speech": "Hi there, how can I help?"
+            }
+          }
+        ]
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:32.081Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:32.171291217Z"
+  },
+  {
+    "insertId": "15wm9wag47in6wa",
+    "jsonPayload": {
+      "userInput": {
+        "originalQuery": "middle"
+      },
+      "timestamp": "2020-09-08T15:09:30.073Z",
+      "status": {},
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:30.073Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:32.171291217Z"
+  },
+  {
+    "insertId": "13oevfgg51ldp3v",
+    "jsonPayload": {
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Hi there, how can I help?",
+              "speech": "Hi there, how can I help?"
+            }
+          }
+        ]
+      },
+      "waitingForUserInput": {},
+      "timestamp": "2020-09-08T15:09:16.742Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:16.742Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:16.782404438Z"
+  },
+  {
+    "insertId": "13oevfgg51ldp3u",
+    "jsonPayload": {
+      "executionState": {
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Hi there, how can I help?",
+              "speech": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "currentSceneId": "custom_intent"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:09:16.741Z",
+      "onSceneEnter": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:16.741Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:16.782404438Z"
+  },
+  {
+    "insertId": "13oevfgg51ldp3t",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:09:16.740Z",
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Hi there, how can I help?\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\", \n    \"params\": {}\n  }\n}\n"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:16.740Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:16.782404438Z"
+  },
+  {
+    "insertId": "13oevfgg51ldp3s",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"limachatconn\"},\"intent\":{\"name\":\"actions.intent.MAIN\",\"params\":{},\"query\":\"Talk to Lima Chat\"},\"scene\":{\"name\":\"actions.scene.START_CONVERSATION\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{},\"next\":{\"name\":\"custom_intent\"}},\"session\":{\"id\":\"ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T15:05:46Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "timestamp": "2020-09-08T15:09:16.740Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:16.740Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:16.782404438Z"
+  },
+  {
+    "insertId": "13oevfgg51ldp3r",
+    "jsonPayload": {
+      "intentMatch": {
+        "intentId": "actions.intent.MAIN",
+        "nextSceneId": "custom_intent",
+        "functionName": "limachatconn"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:09:16.740Z",
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Hi there, how can I help?",
+              "speech": "Hi there, how can I help?"
+            }
+          }
+        ]
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:09:16.740Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:16.782404438Z"
+  },
+  {
+    "insertId": "13oevfgg51ldp3q",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T15:09:10.600Z",
+      "userInput": {},
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "actions.scene.START_CONVERSATION"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:09:10.600Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHzOlOa8ZJQeHFWoDc7nSCSZEN9WtpOntnzpuiRqjsYeWCtko_xd7k5CgmK1M4Q2kyEjICw5UQ",
+    "receiveTimestamp": "2020-09-08T15:09:16.782404438Z"
+  },
+  {
+    "insertId": "19snineg40j9f4u",
+    "jsonPayload": {
+      "executionState": {
+        "currentSceneId": "actions.scene.END_CONVERSATION",
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Good to see you again",
+              "speech": "Good to see you again"
+            }
+          }
+        ]
+      },
+      "endConversation": {},
+      "timestamp": "2020-09-08T15:05:46.149Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:05:46.149Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHqrtEcjFcrkU-3_-Gzv9TFQn0jIRZB7Q4Wtmn9lWRlOSUiK4kd6w_H5Yv88u_Up06snhod008",
+    "receiveTimestamp": "2020-09-08T15:05:46.243112613Z"
+  },
+  {
+    "insertId": "19snineg40j9f4t",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T15:05:46.148Z",
+      "webhookInitiatedTransition": {
+        "nextSceneId": "actions.scene.END_CONVERSATION"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:05:46.148Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHqrtEcjFcrkU-3_-Gzv9TFQn0jIRZB7Q4Wtmn9lWRlOSUiK4kd6w_H5Yv88u_Up06snhod008",
+    "receiveTimestamp": "2020-09-08T15:05:46.243112613Z"
+  },
+  {
+    "insertId": "19snineg40j9f4s",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:05:46.148Z",
+      "status": {},
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Good to see you again\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"actions.scene.END_CONVERSATION\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHHqrtEcjFcrkU-3_-Gzv9TFQn0jIRZB7Q4Wtmn9lWRlOSUiK4kd6w_H5Yv88u_Up06snhod008\", \n    \"params\": {}\n  }\n}\n"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T15:05:46.148Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHqrtEcjFcrkU-3_-Gzv9TFQn0jIRZB7Q4Wtmn9lWRlOSUiK4kd6w_H5Yv88u_Up06snhod008",
+    "receiveTimestamp": "2020-09-08T15:05:46.243112613Z"
+  },
+  {
+    "insertId": "19snineg40j9f4r",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"limachatconn\"},\"intent\":{\"name\":\"actions.intent.MAIN\",\"params\":{},\"query\":\"Talk to Lima Chat\"},\"scene\":{\"name\":\"actions.scene.START_CONVERSATION\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{},\"next\":{\"name\":\"custom_intent\"}},\"session\":{\"id\":\"ABwppHHqrtEcjFcrkU-3_-Gzv9TFQn0jIRZB7Q4Wtmn9lWRlOSUiK4kd6w_H5Yv88u_Up06snhod008\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T14:59:58Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T15:05:46.148Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T15:05:46.148Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHqrtEcjFcrkU-3_-Gzv9TFQn0jIRZB7Q4Wtmn9lWRlOSUiK4kd6w_H5Yv88u_Up06snhod008",
+    "receiveTimestamp": "2020-09-08T15:05:46.243112613Z"
+  },
+  {
+    "insertId": "19snineg40j9f4q",
+    "jsonPayload": {
+      "executionState": {
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Good to see you again",
+              "text": "Good to see you again"
+            }
+          }
+        ]
+      },
+      "intentMatch": {
+        "functionName": "limachatconn",
+        "intentId": "actions.intent.MAIN",
+        "nextSceneId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T15:05:46.148Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:05:46.148Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHqrtEcjFcrkU-3_-Gzv9TFQn0jIRZB7Q4Wtmn9lWRlOSUiK4kd6w_H5Yv88u_Up06snhod008",
+    "receiveTimestamp": "2020-09-08T15:05:46.243112613Z"
+  },
+  {
+    "insertId": "19snineg40j9f4p",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T15:05:43.721Z",
+      "executionState": {
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "sessionParameters": {}
+      },
+      "status": {},
+      "userInput": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T15:05:43.721Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHqrtEcjFcrkU-3_-Gzv9TFQn0jIRZB7Q4Wtmn9lWRlOSUiK4kd6w_H5Yv88u_Up06snhod008",
+    "receiveTimestamp": "2020-09-08T15:05:46.243112613Z"
+  },
+  {
+    "insertId": "yey1ayg3okvu36",
+    "jsonPayload": {
+      "endConversation": {},
+      "timestamp": "2020-09-08T14:59:58.505Z",
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "actions.scene.END_CONVERSATION",
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Hi there, how can I help?",
+              "text": "Hi there, how can I help?"
+            }
+          }
+        ]
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T14:59:58.505Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHFY6-gKiyq58xGhGFsVMqLjEQCltT3IYOP36aAsrR98N3tWabekphywtWPQBIaZaJszr1Z9170",
+    "receiveTimestamp": "2020-09-08T14:59:58.593531504Z"
+  },
+  {
+    "insertId": "yey1ayg3okvu35",
+    "jsonPayload": {
+      "webhookInitiatedTransition": {
+        "nextSceneId": "actions.scene.END_CONVERSATION"
+      },
+      "timestamp": "2020-09-08T14:59:58.505Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:59:58.505Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHFY6-gKiyq58xGhGFsVMqLjEQCltT3IYOP36aAsrR98N3tWabekphywtWPQBIaZaJszr1Z9170",
+    "receiveTimestamp": "2020-09-08T14:59:58.593531504Z"
+  },
+  {
+    "insertId": "yey1ayg3okvu34",
+    "jsonPayload": {
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Hi there, how can I help?\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"actions.scene.END_CONVERSATION\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHFY6-gKiyq58xGhGFsVMqLjEQCltT3IYOP36aAsrR98N3tWabekphywtWPQBIaZaJszr1Z9170\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "timestamp": "2020-09-08T14:59:58.505Z",
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T14:59:58.505Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHFY6-gKiyq58xGhGFsVMqLjEQCltT3IYOP36aAsrR98N3tWabekphywtWPQBIaZaJszr1Z9170",
+    "receiveTimestamp": "2020-09-08T14:59:58.593531504Z"
+  },
+  {
+    "insertId": "yey1ayg3okvu33",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"limachatconn\"},\"intent\":{\"name\":\"actions.intent.MAIN\",\"params\":{},\"query\":\"Talk to Lima Chat\"},\"scene\":{\"name\":\"actions.scene.START_CONVERSATION\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{},\"next\":{\"name\":\"custom_intent\"}},\"session\":{\"id\":\"ABwppHFY6-gKiyq58xGhGFsVMqLjEQCltT3IYOP36aAsrR98N3tWabekphywtWPQBIaZaJszr1Z9170\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T14:48:45Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T14:59:58.505Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:59:58.505Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHFY6-gKiyq58xGhGFsVMqLjEQCltT3IYOP36aAsrR98N3tWabekphywtWPQBIaZaJszr1Z9170",
+    "receiveTimestamp": "2020-09-08T14:59:58.593531504Z"
+  },
+  {
+    "insertId": "yey1ayg3okvu32",
+    "jsonPayload": {
+      "intentMatch": {
+        "nextSceneId": "custom_intent",
+        "intentId": "actions.intent.MAIN",
+        "functionName": "limachatconn"
+      },
+      "timestamp": "2020-09-08T14:59:58.505Z",
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Hi there, how can I help?",
+              "text": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "sessionParameters": {}
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:59:58.505Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHFY6-gKiyq58xGhGFsVMqLjEQCltT3IYOP36aAsrR98N3tWabekphywtWPQBIaZaJszr1Z9170",
+    "receiveTimestamp": "2020-09-08T14:59:58.593531504Z"
+  },
+  {
+    "insertId": "yey1ayg3okvu31",
+    "jsonPayload": {
+      "userInput": {},
+      "executionState": {
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "sessionParameters": {}
+      },
+      "status": {},
+      "timestamp": "2020-09-08T14:59:56.065Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T14:59:56.065Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHFY6-gKiyq58xGhGFsVMqLjEQCltT3IYOP36aAsrR98N3tWabekphywtWPQBIaZaJszr1Z9170",
+    "receiveTimestamp": "2020-09-08T14:59:58.593531504Z"
+  },
+  {
+    "insertId": "2i4ghgg1szl7ge",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T14:48:45.867Z",
+      "endConversation": {},
+      "executionState": {
+        "sessionParameters": {},
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Hi there, how can I help?",
+              "text": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "currentSceneId": "actions.scene.END_CONVERSATION"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:48:45.867Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHGuBWUczZJOQfePH7v_n7Lhb7OC59rglRtl19BVlXQX99--9W6M1foHqPiaysgfCS7SuC5c2Ko",
+    "receiveTimestamp": "2020-09-08T14:48:45.910304761Z"
+  },
+  {
+    "insertId": "2i4ghgg1szl7gd",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T14:48:45.866Z",
+      "webhookInitiatedTransition": {
+        "nextSceneId": "actions.scene.END_CONVERSATION"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T14:48:45.866Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHGuBWUczZJOQfePH7v_n7Lhb7OC59rglRtl19BVlXQX99--9W6M1foHqPiaysgfCS7SuC5c2Ko",
+    "receiveTimestamp": "2020-09-08T14:48:45.910304761Z"
+  },
+  {
+    "insertId": "2i4ghgg1szl7gc",
+    "jsonPayload": {
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Hi there, how can I help?\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"actions.scene.END_CONVERSATION\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHGuBWUczZJOQfePH7v_n7Lhb7OC59rglRtl19BVlXQX99--9W6M1foHqPiaysgfCS7SuC5c2Ko\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T14:48:45.866Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T14:48:45.866Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHGuBWUczZJOQfePH7v_n7Lhb7OC59rglRtl19BVlXQX99--9W6M1foHqPiaysgfCS7SuC5c2Ko",
+    "receiveTimestamp": "2020-09-08T14:48:45.910304761Z"
+  },
+  {
+    "insertId": "2i4ghgg1szl7gb",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"limachatconn\"},\"intent\":{\"name\":\"actions.intent.MAIN\",\"params\":{},\"query\":\"talk to Lima chat\"},\"scene\":{\"name\":\"actions.scene.START_CONVERSATION\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{},\"next\":{\"name\":\"custom_intent\"}},\"session\":{\"id\":\"ABwppHGuBWUczZJOQfePH7v_n7Lhb7OC59rglRtl19BVlXQX99--9W6M1foHqPiaysgfCS7SuC5c2Ko\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-GB\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T14:47:47Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"WEB_LINK\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T14:48:45.866Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T14:48:45.866Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHGuBWUczZJOQfePH7v_n7Lhb7OC59rglRtl19BVlXQX99--9W6M1foHqPiaysgfCS7SuC5c2Ko",
+    "receiveTimestamp": "2020-09-08T14:48:45.910304761Z"
+  },
+  {
+    "insertId": "2i4ghgg1szl7ga",
+    "jsonPayload": {
+      "executionState": {
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Hi there, how can I help?",
+              "text": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "sessionParameters": {}
+      },
+      "timestamp": "2020-09-08T14:48:45.866Z",
+      "intentMatch": {
+        "functionName": "limachatconn",
+        "nextSceneId": "custom_intent",
+        "intentId": "actions.intent.MAIN"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T14:48:45.866Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHGuBWUczZJOQfePH7v_n7Lhb7OC59rglRtl19BVlXQX99--9W6M1foHqPiaysgfCS7SuC5c2Ko",
+    "receiveTimestamp": "2020-09-08T14:48:45.910304761Z"
+  },
+  {
+    "insertId": "2i4ghgg1szl7g9",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T14:48:43.777Z",
+      "status": {},
+      "userInput": {},
+      "executionState": {
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T14:48:43.777Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHGuBWUczZJOQfePH7v_n7Lhb7OC59rglRtl19BVlXQX99--9W6M1foHqPiaysgfCS7SuC5c2Ko",
+    "receiveTimestamp": "2020-09-08T14:48:45.910304761Z"
+  },
+  {
+    "insertId": "vwzellg25mue6f",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T14:47:47.150Z",
+      "endConversation": {},
+      "executionState": {
+        "currentSceneId": "actions.scene.END_CONVERSATION",
+        "responses": [
+          {
+            "firstSimple": {
+              "text": "Hi there, how can I help?",
+              "speech": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "sessionParameters": {}
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T14:47:47.150Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF4aE5UKbdULiU8hunQK3333a707dKrcPnuxCl1MYYZSbN_BgXKYrzfwWlHx3FRBr2Xw0FgrBs",
+    "receiveTimestamp": "2020-09-08T14:47:47.249637541Z"
+  },
+  {
+    "insertId": "vwzellg25mue6e",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T14:47:47.149Z",
+      "webhookInitiatedTransition": {
+        "nextSceneId": "actions.scene.END_CONVERSATION"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:47:47.149Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF4aE5UKbdULiU8hunQK3333a707dKrcPnuxCl1MYYZSbN_BgXKYrzfwWlHx3FRBr2Xw0FgrBs",
+    "receiveTimestamp": "2020-09-08T14:47:47.249637541Z"
+  },
+  {
+    "insertId": "vwzellg25mue6d",
+    "jsonPayload": {
+      "webhookResponse": {
+        "responseJson": "{\n  \"prompt\": {\n    \"firstSimple\": {\n      \"speech\": \"Hi there, how can I help?\", \n      \"text\": \"\"\n    }, \n    \"override\": \"false\"\n  }, \n  \"scene\": {\n    \"name\": \"SceneName\", \n    \"next\": {\n      \"name\": \"actions.scene.END_CONVERSATION\"\n    }, \n    \"slots\": {}\n  }, \n  \"session\": {\n    \"id\": \"ABwppHF4aE5UKbdULiU8hunQK3333a707dKrcPnuxCl1MYYZSbN_BgXKYrzfwWlHx3FRBr2Xw0FgrBs\", \n    \"params\": {}\n  }\n}\n"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T14:47:47.149Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:47:47.149Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF4aE5UKbdULiU8hunQK3333a707dKrcPnuxCl1MYYZSbN_BgXKYrzfwWlHx3FRBr2Xw0FgrBs",
+    "receiveTimestamp": "2020-09-08T14:47:47.249637541Z"
+  },
+  {
+    "insertId": "vwzellg25mue6c",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"limachatconn\"},\"intent\":{\"name\":\"actions.intent.MAIN\",\"params\":{},\"query\":\"Talk to Lima Chat\"},\"scene\":{\"name\":\"actions.scene.START_CONVERSATION\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{},\"next\":{\"name\":\"custom_intent\"}},\"session\":{\"id\":\"ABwppHF4aE5UKbdULiU8hunQK3333a707dKrcPnuxCl1MYYZSbN_BgXKYrzfwWlHx3FRBr2Xw0FgrBs\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T14:47:09Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T14:47:47.149Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:47:47.149Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF4aE5UKbdULiU8hunQK3333a707dKrcPnuxCl1MYYZSbN_BgXKYrzfwWlHx3FRBr2Xw0FgrBs",
+    "receiveTimestamp": "2020-09-08T14:47:47.249637541Z"
+  },
+  {
+    "insertId": "vwzellg25mue6b",
+    "jsonPayload": {
+      "status": {},
+      "executionState": {
+        "responses": [
+          {
+            "firstSimple": {
+              "speech": "Hi there, how can I help?",
+              "text": "Hi there, how can I help?"
+            }
+          }
+        ],
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "sessionParameters": {}
+      },
+      "intentMatch": {
+        "nextSceneId": "custom_intent",
+        "functionName": "limachatconn",
+        "intentId": "actions.intent.MAIN"
+      },
+      "timestamp": "2020-09-08T14:47:47.149Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:47:47.149Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF4aE5UKbdULiU8hunQK3333a707dKrcPnuxCl1MYYZSbN_BgXKYrzfwWlHx3FRBr2Xw0FgrBs",
+    "receiveTimestamp": "2020-09-08T14:47:47.249637541Z"
+  },
+  {
+    "insertId": "vwzellg25mue6a",
+    "jsonPayload": {
+      "executionState": {
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "sessionParameters": {}
+      },
+      "status": {},
+      "userInput": {},
+      "timestamp": "2020-09-08T14:47:44.956Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:47:44.956Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHF4aE5UKbdULiU8hunQK3333a707dKrcPnuxCl1MYYZSbN_BgXKYrzfwWlHx3FRBr2Xw0FgrBs",
+    "receiveTimestamp": "2020-09-08T14:47:47.249637541Z"
+  },
+  {
+    "insertId": "4fw5cjg5ueavmx",
+    "jsonPayload": {
+      "status": {
+        "message": "There is no prompt message nor helper instruction in the response due to webhook failures:\nINVALID_ARGUMENT: Unsuccessful webhook call due to client issue: Agent timed out. state: URL_TIMEOUT.",
+        "code": 13
+      },
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "endConversation": {},
+      "timestamp": "2020-09-08T14:47:09.245Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T14:47:09.245Z",
+    "severity": "CRITICAL",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHOsrDhuVD6sJa25dFk4w9H1aTRk3pR4jd3V6tSDQQxHJ5h4dWKgh39Zt14w3cMhbP9QeOWlwQ",
+    "receiveTimestamp": "2020-09-08T14:47:09.287961529Z"
+  },
+  {
+    "insertId": "4fw5cjg5ueavmw",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T14:47:09.171Z",
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      },
+      "onSceneEnter": {},
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:47:09.171Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHOsrDhuVD6sJa25dFk4w9H1aTRk3pR4jd3V6tSDQQxHJ5h4dWKgh39Zt14w3cMhbP9QeOWlwQ",
+    "receiveTimestamp": "2020-09-08T14:47:09.287961529Z"
+  },
+  {
+    "insertId": "4fw5cjg5ueavmv",
+    "jsonPayload": {
+      "status": {
+        "code": 3,
+        "message": "Unsuccessful webhook call due to client issue: Agent timed out. state: URL_TIMEOUT."
+      },
+      "timestamp": "2020-09-08T14:47:09.169Z",
+      "webhookResponse": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:47:09.169Z",
+    "severity": "ERROR",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHOsrDhuVD6sJa25dFk4w9H1aTRk3pR4jd3V6tSDQQxHJ5h4dWKgh39Zt14w3cMhbP9QeOWlwQ",
+    "receiveTimestamp": "2020-09-08T14:47:09.287961529Z"
+  },
+  {
+    "insertId": "4fw5cjg5ueavmu",
+    "jsonPayload": {
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"limachatconn\"},\"intent\":{\"name\":\"actions.intent.MAIN\",\"params\":{},\"query\":\"Talk to Lima Chat\"},\"scene\":{\"name\":\"actions.scene.START_CONVERSATION\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{},\"next\":{\"name\":\"custom_intent\"}},\"session\":{\"id\":\"ABwppHHOsrDhuVD6sJa25dFk4w9H1aTRk3pR4jd3V6tSDQQxHJ5h4dWKgh39Zt14w3cMhbP9QeOWlwQ\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-US\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T14:45:05Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"LONG_FORM_AUDIO\"]}}"
+      },
+      "status": {},
+      "timestamp": "2020-09-08T14:47:09.169Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:47:09.169Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHOsrDhuVD6sJa25dFk4w9H1aTRk3pR4jd3V6tSDQQxHJ5h4dWKgh39Zt14w3cMhbP9QeOWlwQ",
+    "receiveTimestamp": "2020-09-08T14:47:09.287961529Z"
+  },
+  {
+    "insertId": "4fw5cjg5ueavmt",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T14:47:09.169Z",
+      "executionState": {
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "sessionParameters": {}
+      },
+      "intentMatch": {
+        "nextSceneId": "custom_intent",
+        "intentId": "actions.intent.MAIN",
+        "functionName": "limachatconn"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T14:47:09.169Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHOsrDhuVD6sJa25dFk4w9H1aTRk3pR4jd3V6tSDQQxHJ5h4dWKgh39Zt14w3cMhbP9QeOWlwQ",
+    "receiveTimestamp": "2020-09-08T14:47:09.287961529Z"
+  },
+  {
+    "insertId": "4fw5cjg5ueavms",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T14:46:58.975Z",
+      "userInput": {},
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "actions.scene.START_CONVERSATION"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": "",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:46:58.975Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHOsrDhuVD6sJa25dFk4w9H1aTRk3pR4jd3V6tSDQQxHJ5h4dWKgh39Zt14w3cMhbP9QeOWlwQ",
+    "receiveTimestamp": "2020-09-08T14:47:09.287961529Z"
+  },
+  {
+    "insertId": "1ndqu4qg3w64fpx",
+    "jsonPayload": {
+      "endConversation": {},
+      "executionState": {
+        "currentSceneId": "custom_intent",
+        "sessionParameters": {}
+      },
+      "status": {
+        "code": 13,
+        "message": "There is no prompt message nor helper instruction in the response due to webhook failures:\nINVALID_ARGUMENT: Unsuccessful webhook call due to client issue: Error querying agent endpoint. State: URL_ERROR, reason: ERROR_NOT_FOUND."
+      },
+      "timestamp": "2020-09-08T14:45:05.563Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T14:45:05.563Z",
+    "severity": "CRITICAL",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHUKSxkuv4pI2ZILoZdjnF4Ifk3txkkaEHBBfgHlAiISQZCm41--45UoFQg8FvdHJq273RRKHg",
+    "receiveTimestamp": "2020-09-08T14:45:05.627326015Z"
+  },
+  {
+    "insertId": "1ndqu4qg3w64fpw",
+    "jsonPayload": {
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "custom_intent"
+      },
+      "timestamp": "2020-09-08T14:45:05.556Z",
+      "status": {},
+      "onSceneEnter": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:45:05.556Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHUKSxkuv4pI2ZILoZdjnF4Ifk3txkkaEHBBfgHlAiISQZCm41--45UoFQg8FvdHJq273RRKHg",
+    "receiveTimestamp": "2020-09-08T14:45:05.627326015Z"
+  },
+  {
+    "insertId": "1ndqu4qg3w64fpv",
+    "jsonPayload": {
+      "webhookResponse": {
+        "responseJson": "Tunnel a622fc633a81.ngrok.io not found"
+      },
+      "status": {
+        "message": "Unsuccessful webhook call due to client issue: Error querying agent endpoint. State: URL_ERROR, reason: ERROR_NOT_FOUND.",
+        "code": 3
+      },
+      "timestamp": "2020-09-08T14:45:05.555Z"
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "version_id": ""
+      }
+    },
+    "timestamp": "2020-09-08T14:45:05.555Z",
+    "severity": "ERROR",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHUKSxkuv4pI2ZILoZdjnF4Ifk3txkkaEHBBfgHlAiISQZCm41--45UoFQg8FvdHJq273RRKHg",
+    "receiveTimestamp": "2020-09-08T14:45:05.627326015Z"
+  },
+  {
+    "insertId": "1ndqu4qg3w64fpu",
+    "jsonPayload": {
+      "status": {},
+      "timestamp": "2020-09-08T14:45:05.555Z",
+      "webhookRequest": {
+        "requestJson": "{\"handler\":{\"name\":\"limachatconn\"},\"intent\":{\"name\":\"actions.intent.MAIN\",\"params\":{},\"query\":\"talk to Lima chat\"},\"scene\":{\"name\":\"actions.scene.START_CONVERSATION\",\"slotFillingStatus\":\"UNSPECIFIED\",\"slots\":{},\"next\":{\"name\":\"custom_intent\"}},\"session\":{\"id\":\"ABwppHHUKSxkuv4pI2ZILoZdjnF4Ifk3txkkaEHBBfgHlAiISQZCm41--45UoFQg8FvdHJq273RRKHg\",\"params\":{},\"typeOverrides\":[],\"languageCode\":\"\"},\"user\":{\"locale\":\"en-GB\",\"params\":{},\"accountLinkingStatus\":\"NOT_LINKED\",\"verificationStatus\":\"VERIFIED\",\"packageEntitlements\":[],\"lastSeenTime\":\"2020-09-08T13:53:28Z\"},\"home\":{\"params\":{}},\"device\":{\"capabilities\":[\"SPEECH\",\"RICH_RESPONSE\",\"WEB_LINK\",\"LONG_FORM_AUDIO\"]}}"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "project_id": "limachatbot",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512"
+      }
+    },
+    "timestamp": "2020-09-08T14:45:05.555Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHUKSxkuv4pI2ZILoZdjnF4Ifk3txkkaEHBBfgHlAiISQZCm41--45UoFQg8FvdHJq273RRKHg",
+    "receiveTimestamp": "2020-09-08T14:45:05.627326015Z"
+  },
+  {
+    "insertId": "1ndqu4qg3w64fpt",
+    "jsonPayload": {
+      "executionState": {
+        "currentSceneId": "actions.scene.START_CONVERSATION",
+        "sessionParameters": {}
+      },
+      "status": {},
+      "timestamp": "2020-09-08T14:45:05.555Z",
+      "intentMatch": {
+        "intentId": "actions.intent.MAIN",
+        "nextSceneId": "custom_intent",
+        "functionName": "limachatconn"
+      }
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:45:05.555Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHUKSxkuv4pI2ZILoZdjnF4Ifk3txkkaEHBBfgHlAiISQZCm41--45UoFQg8FvdHJq273RRKHg",
+    "receiveTimestamp": "2020-09-08T14:45:05.627326015Z"
+  },
+  {
+    "insertId": "1ndqu4qg3w64fps",
+    "jsonPayload": {
+      "timestamp": "2020-09-08T14:45:05.284Z",
+      "userInput": {},
+      "executionState": {
+        "sessionParameters": {},
+        "currentSceneId": "actions.scene.START_CONVERSATION"
+      },
+      "status": {}
+    },
+    "resource": {
+      "type": "assistant_action",
+      "labels": {
+        "version_id": "",
+        "action_id": "d1ec6792-8733-4f8c-8099-7c05474d2657/PREVIEW-1819598003841512",
+        "project_id": "limachatbot"
+      }
+    },
+    "timestamp": "2020-09-08T14:45:05.284Z",
+    "severity": "INFO",
+    "labels": {
+      "channel": "preview"
+    },
+    "logName": "projects/limachatbot/logs/actions.googleapis.com%2Factions",
+    "trace": "projects/limachatbot/traces/ABwppHHUKSxkuv4pI2ZILoZdjnF4Ifk3txkkaEHBBfgHlAiISQZCm41--45UoFQg8FvdHJq273RRKHg",
+    "receiveTimestamp": "2020-09-08T14:45:05.627326015Z"
+  }
+]

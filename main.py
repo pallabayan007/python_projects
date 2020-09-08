@@ -290,6 +290,75 @@ def wachat():
     # Definition of WhatsApp social media functions
 # =================================================================================
 
+
+# =================================================================================
+    # Definition of Google Voice social media functions
+# =================================================================================
+@app.route("/api/googlevoice", methods=['GET', 'POST'])
+def googlevoicechat():
+
+    try:
+        print("Inside google voice")   
+        print("input json: " + str(request.json)) 
+        print(request.host_url)
+        print("handler: " + request.json["handler"]["name"])
+        # handler = request.json["handler"]["name"]
+        print("intent-query: " + request.json["intent"]["query"])
+        intent_query = request.json["intent"]["query"]
+        print("session-id: " + request.json["session"]["id"])
+        session_id = request.json["session"]["id"]
+
+        sender_json = {
+                        "input": {
+                                "text": intent_query,
+                                "client": "bank",
+                                "socket_id": session_id
+                            }
+                        }
+        
+        msg = send(sio, sender_json)
+        reply_msg = msg['response']
+        if msg['tag']=="goodbye" or msg['tag']=="thanks":
+            next_scene = "actions.scene.END_CONVERSATION"
+            clear_expired_contexts(session_id)
+        else:
+            next_scene = ""
+
+        print(next_scene)
+        print(reply_msg)
+        body = {
+                "session": {
+                    "id": session_id,
+                    "params": {}
+                },
+                "prompt": {
+                    "override": "false",
+                    "firstSimple": {
+                    "speech": reply_msg,
+                    "text": ""
+                    }
+                },
+                "scene": {
+                    "name": "SceneName",
+                    "slots": {},
+                    "next": {
+                        "name": next_scene
+                    }
+                  }
+                }
+
+        # json_reply_to_google_voice = requests.post(url, json=body)
+        return body
+
+    except Exception as e:
+        print('googlevoicechat:: /api/googlevoice Failed: '+ str(e))
+      
+
+
+# =================================================================================
+    # Definition of Google Voice social media functions
+# =================================================================================
+
 if __name__ == "__main__":
     sio.run(app, debug=True)
     # app.run(debug=True)
