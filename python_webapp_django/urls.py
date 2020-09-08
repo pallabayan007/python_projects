@@ -2,6 +2,8 @@
 Definition of urls for python_webapp_django.
 """
 
+from django.conf import settings
+from django.conf.urls.static import static
 from datetime import datetime
 from django.conf.urls import url
 from django.contrib.auth.views import LoginView
