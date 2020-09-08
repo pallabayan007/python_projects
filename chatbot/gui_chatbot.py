@@ -306,7 +306,7 @@ def getResponse(ints, intents_json, json_msg):
                 if i['tag']=='cust_id':
                     # current_context = i['context'][0]
                     print('msg is: ' + msg)
-                    customerid_from_msg = re.findall(r'\d+', msg)
+                    customerid_from_msg = re.findall(r'\d+', msg.replace(" ",""))
                     # print(''.join(customerid_from_msg))
                     if (''.join(customerid_from_msg)).strip() == "":
                         print('customerid_from_msg[0] is blank: ')
