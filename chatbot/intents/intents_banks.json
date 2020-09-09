@@ -26,11 +26,11 @@
         },
         {"tag": "account_balance",
                 "patterns": ["account balance plz","account balance please","Show me my account balance","How you could help me in account balance?"],
-                "responses": ["Please give me your customer id"],
+                "responses": ["Please give me your customer ID"],
                 "context": ["cust_id"]
         },
         {"tag": "cust_id",
-                "patterns": ["my customer id is","id is","that would be "],
+                "patterns": ["my customer ID is","ID is","that would be "],
                 "responses": ["Please wait while I fetch the data, it may take upto few minutes!!!"],
                 "context": ["bankac_balance"]
         },
