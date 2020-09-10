@@ -351,13 +351,91 @@ def googlevoicechat():
         return body
 
     except Exception as e:
-        print('googlevoicechat:: /api/googlevoice Failed: '+ str(e))
-      
+        print('googlevoicechat:: /api/googlevoice Failed: '+ str(e))      
 
 
 # =================================================================================
     # Definition of Google Voice social media functions
 # =================================================================================
+
+
+# =================================================================================
+    # Definition of Alexa Voice functions
+# =================================================================================
+
+@app.route("/api/alexa", methods=['GET', 'POST'])
+def alexachat():
+    print(json.dumps(request.json, indent=2))
+
+    session_id = request.json['session']['sessionId']
+
+    reply_msg = "Please respond"
+    endsession = False
+
+    if request.json['request']['type'] == 'LaunchRequest':
+        sender_json = {
+            "input": {
+                "text": "lima chat",
+                "client": "bank",
+                "socket_id": session_id
+            }
+        }
+        endsession = False
+        msg = send(sio, sender_json)
+        reply_msg = msg['response']
+    else:
+        if request.json['request']['type'] == 'IntentRequest':
+            try:
+                text = request.json['request']['intent']['slots']['sentence']['value']
+                print(text)
+                sender_json = {
+                    "input": {
+                        "text": text,
+                        "client": "bank",
+                        "socket_id": session_id
+                    }
+                }
+                msg = send(sio, sender_json)
+                reply_msg = msg['response']
+                if msg['tag'] == "goodbye" or msg['tag'] == "thanks":
+                    endsession = True
+                    clear_expired_contexts(session_id)
+                else:
+                    endsession = False
+            except Exception as e:
+                logging.exception(e)
+                print('alexachat:: /api/alexa Failed: ' + str(e))
+                reply_msg = "Sorry, cannot fulfill your request right now. Try again later."
+                endsession = False
+
+    response_body = {
+        "version": "1.0",
+        "response": {
+            "outputSpeech": {
+                "type": "PlainText",
+                "text": reply_msg
+            },
+            "card": {
+                "type": "Simple",
+                "title": "Lima Chat",
+                "content": reply_msg
+            },
+            "reprompt": {
+                "outputSpeech": {
+                    "type": "PlainText",
+                    "text": "Please give me further information"
+                }
+            },
+            "shouldEndSession": endsession
+        }
+    }
+
+    return response_body, 200
+
+# =================================================================================
+    # Definition of Alexa Voice functions
+# =================================================================================
+
 
 if __name__ == "__main__":
     sio.run(app, debug=True)
