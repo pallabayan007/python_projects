@@ -196,10 +196,7 @@ def fbchat():
     except Exception as e:
         print('fbchat:: /api/fb Failed: '+ str(e))
         sendtofb(sender_id, "Thanks")
-        return "success", 200
-    
-
-    
+        return "success", 200    
 
 
 def sendtofb(sender_id, text):
@@ -370,8 +367,8 @@ def alexachat():
 
     session_id = request.json['session']['sessionId']
 
-    reply_msg = "Please respond"
-    endsession = False
+    reply_msg = ""
+    endsession = True
 
     if request.json['request']['type'] == 'LaunchRequest':
         sender_json = {
@@ -386,28 +383,46 @@ def alexachat():
         reply_msg = msg['response']
     else:
         if request.json['request']['type'] == 'IntentRequest':
-            try:
-                text = request.json['request']['intent']['slots']['sentence']['value']
-                print(text)
+            if request.json['request']['intent']['name'] == 'AMAZON.StopIntent':
+                endsession = True
+                clear_expired_contexts(session_id)
+            elif request.json['request']['intent']['name'] == 'limaintent':
+                try:
+                    text = request.json['request']['intent']['slots']['sentence']['value']
+                    print(text)
+                    sender_json = {
+                        "input": {
+                            "text": text,
+                            "client": "bank",
+                            "socket_id": session_id
+                        }
+                    }
+                    msg = send(sio, sender_json)
+                    reply_msg = msg['response']
+                    if msg['tag'] == "goodbye" or msg['tag'] == "thanks":
+                        endsession = True
+                        clear_expired_contexts(session_id)
+                    else:
+                        endsession = False
+                except Exception as e:
+                    logging.exception(e)
+                    print('alexachat:: /api/alexa Failed: ' + str(e))
+                    reply_msg = "Sorry, cannot fulfill your request right now. Try again."
+                    endsession = False
+            elif request.json['request']['intent']['name'] == 'AMAZON.HelpIntent':
                 sender_json = {
                     "input": {
-                        "text": text,
+                        "text": "need help",
                         "client": "bank",
                         "socket_id": session_id
                     }
                 }
                 msg = send(sio, sender_json)
                 reply_msg = msg['response']
-                if msg['tag'] == "goodbye" or msg['tag'] == "thanks":
-                    endsession = True
-                    clear_expired_contexts(session_id)
-                else:
-                    endsession = False
-            except Exception as e:
-                logging.exception(e)
-                print('alexachat:: /api/alexa Failed: ' + str(e))
-                reply_msg = "Sorry, cannot fulfill your request right now. Try again later."
-                endsession = False
+
+        else:
+            endsession = True
+            clear_expired_contexts(session_id)
 
     response_body = {
         "version": "1.0",
