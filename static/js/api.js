@@ -59,11 +59,14 @@ var Api = (function() {
       if (http.readyState === 4 && http.status === 200 && http.responseText) {
         console.log("http.responseText: " + http.responseText);
         console.log("http.responseText.output.tag: " + JSON.parse(http.responseText).output.tag.toLowerCase());
+        console.log("http.responseText.output.text: " + JSON.parse(http.responseText).output.text);
         
         if(JSON.parse(http.responseText).output.tag.toLowerCase() == "thanks"){
           clearsocketcontextfromserver();
         }
         Api.setResponsePayload(http.responseText);
+        // Voice.synthVoice(JSON.parse(http.responseText).output.text);
+        // Voice.startvoice();
       }
     };
     //console.log("++++++ http 2"+http.responseText);

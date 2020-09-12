@@ -8,6 +8,7 @@ var counter = 0;
 var socket = io();
 var event_name = "";
 
+console.log("browser type: " + navigator.vendor);
 socket.on("connect", () => {
   console.log("Connected!");
   console.log("Socket ID: " + socket.id);
@@ -189,7 +190,11 @@ var ConversationPanel = (function() {
         currentDiv.classList.add('load');
       });
       // Move chat to the most recent messages when new messages are added
-      scrollToChatBottom();
+      scrollToChatBottom();    
+      if(!isUser){
+        Voice.synthVoice(textExists);
+        // Voice.startvoice();
+      }  
     }
   }
 
@@ -263,7 +268,9 @@ var ConversationPanel = (function() {
   // Handles the submission of input
   function inputKeyDown(event, inputBox) {
     // Submit on enter key, dis-allowing blank messages
-	  console.log("***inside inputKeyDown");
+    // Voice.startvoice();
+    console.log("***inside inputKeyDown");
+    console.log("***inside inputBox value : " + inputBox.value);
     if (event.keyCode === 13 && inputBox.value != "") {
       // Retrieve the context from the previous server response
       var context = "";
@@ -280,6 +287,7 @@ var ConversationPanel = (function() {
       console.log("=======in converstaion.js.inputKeyDown after " + inputBox.value);
       // Clear input box for further messages
       inputBox.value = '';
+      inputBox.placeholder = 'Type something';
       Common.fireEvent(inputBox, 'input');
       console.log("++++inputKeyDown========Socket ID: " + socket.id)
       

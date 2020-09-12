@@ -30,11 +30,11 @@
       <div class="chat-column">
         <div id="scrollingChat"></div>
         <label for="textInput" class="inputOutline">		
+          {#<img src="static/images/speech_button.png" id="speech_button" onclick="Voice.startvoice()">#}
           <input id="textInput" class="input responsive-column"
             placeholder="Type something" type="text"
             onkeydown="ConversationPanel.inputKeyDown(event, this), ConversationPanel.instantiateEventHanders(event)">          
-        </label>
-        {#<img src="static/images/speech_button.png" id="speech_button" onclick="Voice.startvoice()">#}
+        </label>        
       </div>
     </div>
   </div>
