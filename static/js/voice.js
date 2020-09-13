@@ -4,7 +4,7 @@ const SpeechRecognition = window.SpeechRecognition|| window.webkitSpeechRecognit
 const recognition = new SpeechRecognition();
 // const recognition =
 
-recognition.lang = 'en-US';
+recognition.lang = 'en-IN';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 // document.querySelector('speech_button').click
