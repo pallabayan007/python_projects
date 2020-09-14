@@ -1,5 +1,6 @@
 'use strict';
 // The voice module is designed to handle all voice related interactions with the server
+var voiceRequired = false;
 const SpeechRecognition = window.SpeechRecognition|| window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 // const recognition =
@@ -19,6 +20,8 @@ if(navigator.vendor.includes("Google")){
   $("#textInput").click(function(){
     console.log("=====Inside text input click======");
     Voice.startvoice();
+    voiceRequired = true;
+
   });
 }
 
@@ -58,11 +61,13 @@ recognition.addEventListener('result', (e) => {
 
 recognition.addEventListener('speechend', () => {
   recognition.stop();
+  // voiceRequired = false;
 });
 
 recognition.addEventListener('error', (e) => {
   // outputBot.textContent = 'Error: ' + e.error;
   console.log('Error: ' + e.error);
+  voiceRequired = false;  
 });
 
 function callKeypressEnter(obj){
@@ -106,13 +111,19 @@ var Voice = (function() {
     console.log("===== Inside synthVoice text=======" + text);
     console.log("===== Inside synthVoice text type=======" + typeof text);
     const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance();
-    utterance.text = text;
-    synth.speak(utterance);
-    utterance.onend = function(e) {
-      console.log('Finished in ' + e.elapsedTime + ' seconds.');
-      $("#textInput").click();
-    };    
+    console.log("voiceRequired");
+    console.log(voiceRequired);
+    if(voiceRequired){
+      const utterance = new SpeechSynthesisUtterance();
+      utterance.text = text;
+      synth.speak(utterance);
+      utterance.onend = function(e) {
+        console.log('Finished in ' + e.elapsedTime + ' seconds.');
+        $("#textInput").click();
+      };  
+
+    }
+      
     // var msg = new SpeechSynthesisUtterance(text);
     // window.speechSynthesis.speak(msg);
     console.log("===== EndOf synthVoice=======");
