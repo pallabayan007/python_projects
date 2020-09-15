@@ -17,3 +17,6 @@ RUN pip install -r requirements.txt
 COPY . .
 
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--worker-class=eventlet", "main:app", "--timeout", "5000"]
+
+# Incase using https for web server level
+# CMD ["gunicorn", "--certfile", "certificates/server.crt","--keyfile","certificates/server.key", "--bind", "0.0.0.0:5000", "--worker-class=eventlet", "main:app", "--timeout", "5000"]
