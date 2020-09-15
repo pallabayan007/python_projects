@@ -394,9 +394,15 @@ def getResponse(ints, intents_json, json_msg):
 
 # clearing the contexts with expired socket ids
 def clear_expired_contexts(sockid):
-    try:
-        del current_context[sockid]
-        return True
+    print(len(current_context))
+    try:        
+        if len(current_context)>0:
+            print('Inside clear_expired_contexts length > 0: ' + sockid)
+            del current_context[sockid]
+            return True
+        else:
+            print('Inside clear_expired_contexts length 0')
+            return False      
     except Exception as e:
         print('gui_chatbot:: clear_expired_contexts Failed: '+ str(e))  
         return False

@@ -7,11 +7,13 @@ scipy==1.4.1
 numpy==1.18.5
 configparser
 flask_socketio
+flask-socketio
 tensorflow==2.3.0
 dnspython==1.16.0
 gunicorn
 eventlet==0.26.1
 greenlet==0.4.16
+gevent-websocket
 monotonic==1.5
 certifi==2020.6.20
 chardet==3.0.4
@@ -26,3 +28,4 @@ requests==2.24.0
 six==1.15.0
 twilio==6.45.0
 urllib3==1.25.10
+pyopenssl

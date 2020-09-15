@@ -4,20 +4,30 @@ from chatbot.gui_chatbot import send, clear_expired_contexts
 from configparser import SafeConfigParser
 from admin import *
 from twilio.twiml.messaging_response import MessagingResponse
+from http.server import BaseHTTPRequestHandler, HTTPServer, SimpleHTTPRequestHandler
+import ssl
 import socketio, json
 import socket
 import requests
 import re
 import logging
+import sys, setuptools, tokenize
+
 
 HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
 PORT = 5000        # Port to listen on (non-privileged ports are > 1023)
 
+socketId = ''       #For using in case user directly closes browser
+# context = ssl._SSLContext
+# context.load_cert_chain('cert.pem', 'key.pem')
+
 app = Flask(__name__)
 sio = SocketIO(app, cors_allowed_origins="*", manage_session=False)
 
-parser = SafeConfigParser()
+# httpd = HTTPServer(('localhost', 4443), SimpleHTTPRequestHandler)
+# httpd.socket = ssl.wrap_socket(httpd.socket, certfile='./server.pem', server_side=True)
 
+# httpd.serve_forever()
 
 # # create a Socket.IO server
 # sio = socketio.Server()
@@ -26,6 +36,30 @@ parser = SafeConfigParser()
 # app = socketio.WSGIApp(sio, app)
 
 clients = []
+
+
+# =================================================================================================
+# Section for socket routing
+# =================================================================================================
+@sio.on('my_custom_event')
+def handle_my_custom_event(payload):
+    global socketId
+    print('inside  socket handle_my_custom_event')
+    print('received json: ' + str(payload))
+    print(payload["sockid"])
+    socketId = payload["sockid"]
+    sio.emit('response', '{"msg":"Hello"}')
+
+@sio.on('disconnect')
+def handle_disconnect():
+    print('inside  socket handle_disconnect')
+    print('socketId: ' + socketId)
+    clear_expired_contexts(socketId)
+
+# =================================================================================================
+# Section for socket routing
+# =================================================================================================
+
 
 # =================================================================================================
 # Section for client routing
@@ -453,38 +487,26 @@ def alexachat():
 # =================================================================================
 
 
-if __name__ == "__main__":
-    sio.run(app, debug=True)
-    # app.run(debug=True)
-    # socketio.run(app, debug = True, use_reloader = False, port=PORT)
-   
-# print("socket connected: " + str(sio.on('connect').__str__))
-@sio.on('message')
-def handle_my_custom_event(data):
-    print('received json: ' + data)
 # =================================================================================
-    # Definition of socket activity functions
+    # Definition of main function
 # =================================================================================
-# @sio.on('client_connected')
-# def handle_client_connected_event(data):
-#     clients.append(request.sid)
-#     # print('============size===================: ' + str(len(clients))
-#     # for client in clients:
-#     #     sio.emit('chat_msg_return', jsonify(data))
+if __name__ == "__main__":    
+    sio.run(app, ssl_context='adhoc')
+    # sio.run(
+    #     app,
+    #     host="0.0.0.0",
+    #     port=5000,
+    #     keyfile="certificates/server.key",
+    #     certfile="certificates/server.crt")
+    # app.run(ssl_context)
+    # app.run(ssl_context='adhoc', debug=True)
+    # httpd.server_activate()
+    # httpd.serve_forever()
+    # sio.run(httpd.serve_forever(), debug=True)
+#     # app.run(debug=True)
+#     # socketio.run(app, debug = True, use_reloader = False, port=PORT)
+# =================================================================================
+    # Definition of main function
+# =================================================================================
 
-# sio.on("connected")
-# def client_connected():
-#     conn, addr = sio.accept()
-#     sio.on_event("message",on_foo_event)
-#     print("Connected by client")
-#     # print('Connected by', addr1)
 
-# def on_foo_event(data):  
-#         print('received json: ' + data) 
-
-# @sio.on("message")
-# def handle_message(data:str):
-#     print('inside chat_msg_return')
-#     # print("Socket ID: " , sid)
-#     print("message:", data)
-#     sio.emit('response', '{"msg":"Hello"}')

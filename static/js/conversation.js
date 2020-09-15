@@ -9,10 +9,17 @@ var socket = io();
 var event_name = "";
 
 console.log("browser type: " + navigator.vendor);
-socket.on("connect", () => {
+socket.on("connect", function() {
   console.log("Connected!");
   console.log("Socket ID: " + socket.id);
   event_name = socket.id+"_my_message";
+  socket.emit('my_custom_event', {'data': 'I\'m connected!', 'sockid': socket.id});
+  console.log("after event emit");
+
+});
+socket.on("response", function(json){
+  console.log("Inside response!");
+  console.log("Response from server after connection event emit: " + JSON.parse(json).msg);
 
 });
 socket.on("disconnect", () => {
