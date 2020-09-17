@@ -7,6 +7,7 @@ WORKDIR /opt/app
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV PYTHONVERSION 3.8
 
 # copy project
 COPY . .
@@ -16,7 +17,7 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # move models.py
-RUN mv models.py /usr/local/lib/python3.8/site-packages/django/contrib/auth
+RUN mv models.py /usr/local/lib/python$PYTHONVERSION/site-packages/django/contrib/auth
 
 RUN python manage.py collectstatic --noinput
 
