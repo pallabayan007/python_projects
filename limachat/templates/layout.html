@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lima - Chatbot Admin Application</title>
+    {#<!-- {% load static %} -->#}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+    <script src="{{ url_for('static', filename='js/modernizr-2.6.2.js') }}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {#<!-- <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script> -->#}
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a><img src="../../static/images/chatbot.png" /></a>
+                <a href="/" class="navbar-brand">                    
+                    Lima Chatbot Admin
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    {#{% if user.is_authenticated %}
+                    <li><a href="{% url 'home_ML' %}">ML-Solution-Offerings</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>#}
+                </ul>
+                {#{% include 'app/loginpartial.html' %}#}
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+    {% block content %}
+       {# <h1> Chatbot Administration </h1>
+        <p> This page is used for different chatbot admin activities</p>
+        <!-- <p> Applications that use the Flask framework include Pinterest,
+        LinkedIn, and the community web page for Flask itself.</p> -->#}
+    {% endblock %}
+        <hr/>
+        <footer>
+            <p>&copy; <script>document.write( new Date().getFullYear() );</script> - Lima Chatbot Application</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/jquery-1.10.2.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/respond.js') }}"></script>
+
+    {#<script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>#}
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

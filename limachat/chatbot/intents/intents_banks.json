@@ -1,0 +1,43 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi","Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day", "Talk to Lima Chat"],
+         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        {"tag": "options",
+                "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered","plz help","help needed","brauchen Sie Hilfe","yardıma ihtiyacım var", "どのように私を助けることができますか？"],
+                "responses": ["I can guide you through checking your account balance, getting your last 10 txn details, checking your account info"],
+                "context": [""]
+        },
+        {"tag": "account_balance",
+                "patterns": ["account balance plz","account balance please","Show me my account balance","How you could help me in account balance?"],
+                "responses": ["Please give me your customer ID"],
+                "context": ["cust_id"]
+        },
+        {"tag": "cust_id",
+                "patterns": ["my customer ID is","ID is","that would be "],
+                "responses": ["Please wait while I fetch the data, it may take upto few minutes!!!"],
+                "context": ["bankac_balance"]
+        },
+        {"tag": "bankac_balance",
+                "patterns": ["my account is","that would be ","ac is"],
+                "responses": ["Please wait while I fetch the data, it may take upto few minutes!!!"],
+                "context": [""]
+        }        
+   ]
+}

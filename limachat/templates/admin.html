@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+    {% block content %}
+
+      <div class="main-container">
+        <div class="cloud-image">
+            <img src="../../static/images/successCloudNew.svg" />
+        </div>
+        <div class="content">
+            <div class="tweet-container">
+                <a href="http://twitter.com/intent/tweet/?text=I%20just%20created%20a%20new%20Python%20Django%20website%20on%20Azure%20using%20Azure%20DevOps%20Project&hashtags=AzureDevOpsProject%2CVSTS%20%40Azure%20%40VSTS">
+                    <img src="../../static/images/tweetThis.svg" />
+                </a>            
+            </div>
+            <div class="content-body">
+                <div class="success-text">Success!</div>
+                <div class="description line-1"> Chatbot Administration</div>
+                <div class="description line-2"> This page is used for different chatbot admin activities</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">        
+        <div class="col-md-4">
+            <h2>Upload your training data</h2>
+            <p>Please upload your intent file</p>
+            <input type="file" id="myFile" multiple size="50" onchange="selectuploadfile('myFile','demo')">    
+            <p id="demo"></p>    
+            <p><strong>Tip:</strong> Use the Control or the Shift key to select multiple files.</p>   
+            <p><a class="btn btn-default" id="process-file-button">Upload &raquo;</a>
+                <img src="../../static/images/doc_success_commit.png" id="ico_upldtrainingcompleted" hidden/>            
+                <img src="../../static/images/doc_failure_icon.png" id="ico_upldtrainingfailed" hidden/>
+            </p>  
+            <div class="progress" id="myProgress_upldtrainingdata" hidden>
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%" id="myBar_upldtrainingdata">
+                  Uploading
+                </div>
+            </div>                       
+        </div>
+        <div class="col-md-4" id="trainingdiv">
+          <h2>Get your system training done right away </h2>
+          <p>
+              Start training your system by cliccking the button
+          </p>
+          <p>
+            <label for="client-dropdown">Choose a Client:</label>
+            <select id="client-dropdown" name="clients" onclick="populateclientdropdown()">
+            </select>
+            {#<select id="gate">
+              <option value='null'>- choose -</option>
+              <option value='gateway_1'>Gateway 1</option>
+              <option value='gateway_2'>Gateway 2</option>
+          </select>#}
+          </p>
+          <p><a class="btn btn-default" id="runtraining">Run Training &raquo;</a>            
+                <img src="../../static/images/success_commit.png" id="ico_completed" hidden/>            
+                <img src="../../static/images/failure_icon.png" id="ico_failed" hidden/>
+          </p>
+          <p id="runtrainingstatusmsg" style="color:tomato;" hidden><strong></strong></p> 
+          <div class="progress" id="myProgress" hidden>
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%" id="myBar">
+              Training
+            </div>
+          </div>          
+        </div>
+        <div class="col-md-4">
+            <h2>Upload your config data</h2>
+            <p>Please upload your configration or training config file</p>
+            <input type="file" id="myFile1" multiple size="50" onchange="selectuploadfile('myFile1','demo1')">    
+            <p id="demo1"></p>    
+            <p><strong>Tip:</strong> Use the Control or the Shift key to select multiple files.</p>   
+            <p><a class="btn btn-default" id="process-file-button1">Upload Config &raquo;</a>
+                <img src="../../static/images/doc_success_commit.png" id="ico_upldtrainingcompleted1" hidden/>            
+                <img src="../../static/images/doc_failure_icon.png" id="ico_upldtrainingfailed1" hidden/>
+            </p>  
+            <div class="progress" id="myProgress_upldtrainingdata1" hidden>
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%" id="myBar_upldtrainingdata1">
+                  Uploading
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    {% endblock %}
+      
+

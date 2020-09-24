@@ -1,0 +1,9 @@
+recursive-include limachat\templates *
+recursive-include limachat\static *
+recursive-include limachat\certificates *
+recursive-include limachat\lib *
+recursive-include limachat\logs *
+include limachat\app.yaml
+include limachat\config.ini
+include limachat\server.ini
+recursive-include limachat\chatbot *

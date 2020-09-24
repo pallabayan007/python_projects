@@ -1,0 +1,56 @@
+<html>
+<head>
+  
+  <base href="/">
+  <title>Conversation Chat App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:image" content="conversation.svg" />
+  <meta property="og:title" content="Conversation Chat Simple" />
+  <meta property="og:description" content="Sample application that shows how to use the Conversation API to identify user intents" />
+  <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="static/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="templates/layout.html" rel="import" /> -->
+
+</head>
+<body onload="clertext()">
+  <div id="contentParent" class="responsive-columns-wrapper">
+    <div id="chat-column-holder" class="responsive-column content-column">
+    	<div class="chatMenuSection">
+      	<div style="float:left; margin:3px 10px;">
+          <img src="static/images/pythonml.png" alt="Powered by Python ML">
+          <img alt="Powered by Python ML">
+      	</div>
+      	<div style="float:right; margin:7px 24px;">
+      		<img src="static/images/chatbot.png" alt="Lima Bot">
+      	</div>
+	</div>
+	
+      <div class="chat-column">
+        <div id="scrollingChat"></div>
+        <label for="textInput" class="inputOutline">		
+          {#<img src="static/images/speech_button.png" id="speech_button" onclick="Voice.startvoice()">#}
+          <input id="textInput" class="input responsive-column"
+            placeholder="Type something" type="text"
+            onkeydown="ConversationPanel.inputKeyDown(event, this), ConversationPanel.instantiateEventHanders(event)">          
+        </label>        
+      </div>
+    </div>
+  </div>
+<style>
+</style>   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+  <script src="static/js/jquery-1.10.2.js"></script>
+  <script src="static/js/common.js"></script> 
+  <script src="static/js/api.js"></script>
+  <script type="text/javascript"></script>
+  <script src="static/js/conversation.js"></script>
+  <script src="static/js/payload.js"></script>
+  <script src="static/js/global.js"></script>
+  <script src="static/js/voice.js"></script>
+  
+</body>
+</html>
+
+
